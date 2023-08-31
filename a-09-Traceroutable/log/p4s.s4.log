@@ -1,0 +1,114 @@
+Calling target program-options parser
+[22:48:13.954] [bmv2] [D] [thread 7570] Set default default entry for table 'MyIngress.ipv4_lpm': MyIngress.drop - 
+[22:48:13.954] [bmv2] [D] [thread 7570] Set default default entry for table 'MyIngress.ecmp_group_to_nhop': NoAction - 
+[22:48:13.954] [bmv2] [D] [thread 7570] Set default default entry for table 'tbl_traceroutable117': traceroutable117 - 
+[22:48:13.954] [bmv2] [D] [thread 7570] Set default default entry for table 'MyIngress.icmp_ingress_port': NoAction - 
+[22:48:13.954] [bmv2] [D] [thread 7570] Set default default entry for table 'tbl_traceroutable137': traceroutable137 - 
+Adding interface s4-eth1 as port 1
+[22:48:13.954] [bmv2] [D] [thread 7570] Adding interface s4-eth1 as port 1
+Adding interface s4-eth2 as port 2
+[22:48:13.987] [bmv2] [D] [thread 7570] Adding interface s4-eth2 as port 2
+[22:48:14.003] [bmv2] [I] [thread 7570] Starting Thrift server on port 9093
+[22:48:14.003] [bmv2] [I] [thread 7570] Thrift server was started
+[22:48:14.054] [bmv2] [D] [thread 7576] [0.0] [cxt 0] Processing packet received on port 2
+[22:48:14.054] [bmv2] [D] [thread 7576] [0.0] [cxt 0] Parser 'parser': start
+[22:48:14.054] [bmv2] [D] [thread 7576] [0.0] [cxt 0] Parser 'parser' entering state 'start'
+[22:48:14.054] [bmv2] [D] [thread 7576] [0.0] [cxt 0] Extracting header 'ethernet'
+[22:48:14.054] [bmv2] [D] [thread 7576] [0.0] [cxt 0] Parser state 'start': key is 86dd
+[22:48:14.054] [bmv2] [T] [thread 7576] [0.0] [cxt 0] Bytes parsed: 14
+[22:48:14.054] [bmv2] [D] [thread 7576] [0.0] [cxt 0] Parser 'parser': end
+[22:48:14.054] [bmv2] [D] [thread 7576] [0.0] [cxt 0] Pipeline 'ingress': start
+[22:48:14.054] [bmv2] [T] [thread 7576] [0.0] [cxt 0] /home/wly/p4-learning/exercises/a-09-Traceroutable/p4src/traceroutable.p4(105) Condition "hdr.ipv4.isValid() && hdr.ipv4.ttl > 1" (node_2) is false
+[22:48:14.054] [bmv2] [T] [thread 7576] [0.0] [cxt 0] /home/wly/p4-learning/exercises/a-09-Traceroutable/p4src/traceroutable.p4(114) Condition "hdr.ipv4.isValid() && hdr.tcp.isValid() && hdr.ipv4.ttl == 1" (node_5) is false
+[22:48:14.054] [bmv2] [D] [thread 7576] [0.0] [cxt 0] Pipeline 'ingress': end
+[22:48:14.054] [bmv2] [D] [thread 7576] [0.0] [cxt 0] Egress port is 0
+[22:48:14.055] [bmv2] [D] [thread 7577] [0.0] [cxt 0] Pipeline 'egress': start
+[22:48:14.055] [bmv2] [D] [thread 7577] [0.0] [cxt 0] Pipeline 'egress': end
+[22:48:14.055] [bmv2] [D] [thread 7577] [0.0] [cxt 0] Deparser 'deparser': start
+[22:48:14.055] [bmv2] [T] [thread 7577] [0.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[22:48:14.055] [bmv2] [T] [thread 7577] [0.0] [cxt 0] Skipping checksum 'cksum_0' update because condition not met
+[22:48:14.055] [bmv2] [T] [thread 7577] [0.0] [cxt 0] Skipping checksum 'cksum_1' update because condition not met
+[22:48:14.055] [bmv2] [D] [thread 7577] [0.0] [cxt 0] Deparsing header 'ethernet'
+[22:48:14.055] [bmv2] [D] [thread 7577] [0.0] [cxt 0] Deparser 'deparser': end
+[22:48:14.055] [bmv2] [D] [thread 7581] [0.0] [cxt 0] Transmitting packet of size 86 out of port 0
+[22:48:14.183] [bmv2] [D] [thread 7576] [1.0] [cxt 0] Processing packet received on port 1
+[22:48:14.183] [bmv2] [D] [thread 7576] [1.0] [cxt 0] Parser 'parser': start
+[22:48:14.183] [bmv2] [D] [thread 7576] [1.0] [cxt 0] Parser 'parser' entering state 'start'
+[22:48:14.183] [bmv2] [D] [thread 7576] [1.0] [cxt 0] Extracting header 'ethernet'
+[22:48:14.183] [bmv2] [D] [thread 7576] [1.0] [cxt 0] Parser state 'start': key is 86dd
+[22:48:14.183] [bmv2] [T] [thread 7576] [1.0] [cxt 0] Bytes parsed: 14
+[22:48:14.183] [bmv2] [D] [thread 7576] [1.0] [cxt 0] Parser 'parser': end
+[22:48:14.183] [bmv2] [D] [thread 7576] [1.0] [cxt 0] Pipeline 'ingress': start
+[22:48:14.183] [bmv2] [T] [thread 7576] [1.0] [cxt 0] /home/wly/p4-learning/exercises/a-09-Traceroutable/p4src/traceroutable.p4(105) Condition "hdr.ipv4.isValid() && hdr.ipv4.ttl > 1" (node_2) is false
+[22:48:14.183] [bmv2] [T] [thread 7576] [1.0] [cxt 0] /home/wly/p4-learning/exercises/a-09-Traceroutable/p4src/traceroutable.p4(114) Condition "hdr.ipv4.isValid() && hdr.tcp.isValid() && hdr.ipv4.ttl == 1" (node_5) is false
+[22:48:14.183] [bmv2] [D] [thread 7576] [1.0] [cxt 0] Pipeline 'ingress': end
+[22:48:14.183] [bmv2] [D] [thread 7576] [1.0] [cxt 0] Egress port is 0
+[22:48:14.183] [bmv2] [D] [thread 7577] [1.0] [cxt 0] Pipeline 'egress': start
+[22:48:14.183] [bmv2] [D] [thread 7577] [1.0] [cxt 0] Pipeline 'egress': end
+[22:48:14.183] [bmv2] [D] [thread 7577] [1.0] [cxt 0] Deparser 'deparser': start
+[22:48:14.183] [bmv2] [T] [thread 7577] [1.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[22:48:14.183] [bmv2] [T] [thread 7577] [1.0] [cxt 0] Skipping checksum 'cksum_0' update because condition not met
+[22:48:14.183] [bmv2] [T] [thread 7577] [1.0] [cxt 0] Skipping checksum 'cksum_1' update because condition not met
+[22:48:14.183] [bmv2] [D] [thread 7577] [1.0] [cxt 0] Deparsing header 'ethernet'
+[22:48:14.183] [bmv2] [D] [thread 7577] [1.0] [cxt 0] Deparser 'deparser': end
+[22:48:14.183] [bmv2] [D] [thread 7581] [1.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[22:58:28.699] [bmv2] [T] [thread 7749] bm_get_config
+[22:58:28.700] [bmv2] [T] [thread 7749] bm_mt_get_entries
+[22:58:28.700] [bmv2] [T] [thread 7749] bm_mt_get_entries
+[22:58:28.700] [bmv2] [T] [thread 7749] bm_mt_get_entries
+[22:58:28.704] [bmv2] [T] [thread 7749] bm_reset_state
+[22:58:28.704] [bmv2] [D] [thread 7749] Resetting simple_switch target-specific state
+[22:58:28.705] [bmv2] [D] [thread 7749] resetting PRE state
+[22:58:28.707] [bmv2] [T] [thread 7749] bm_set_default_action
+[22:58:28.707] [bmv2] [D] [thread 7749] Set default entry for table 'MyIngress.ipv4_lpm': MyIngress.drop - 
+[22:58:28.708] [bmv2] [T] [thread 7749] bm_set_default_action
+[22:58:28.708] [bmv2] [D] [thread 7749] Set default entry for table 'MyIngress.ecmp_group_to_nhop': MyIngress.drop - 
+[23:02:32.973] [bmv2] [T] [thread 8031] bm_get_config
+[23:02:32.973] [bmv2] [T] [thread 8031] bm_mt_get_entries
+[23:02:32.973] [bmv2] [T] [thread 8031] bm_mt_get_entries
+[23:02:32.974] [bmv2] [T] [thread 8031] bm_mt_get_entries
+[23:02:32.978] [bmv2] [T] [thread 8031] bm_reset_state
+[23:02:32.978] [bmv2] [D] [thread 8031] Resetting simple_switch target-specific state
+[23:02:32.978] [bmv2] [D] [thread 8031] resetting PRE state
+[23:02:32.981] [bmv2] [T] [thread 8031] bm_set_default_action
+[23:02:32.981] [bmv2] [D] [thread 8031] Set default entry for table 'MyIngress.ipv4_lpm': MyIngress.drop - 
+[23:02:32.981] [bmv2] [T] [thread 8031] bm_set_default_action
+[23:02:32.981] [bmv2] [D] [thread 8031] Set default entry for table 'MyIngress.ecmp_group_to_nhop': MyIngress.drop - 
+[23:03:50.712] [bmv2] [T] [thread 8082] bm_get_config
+[23:03:50.713] [bmv2] [T] [thread 8082] bm_mt_get_entries
+[23:03:50.713] [bmv2] [T] [thread 8082] bm_mt_get_entries
+[23:03:50.713] [bmv2] [T] [thread 8082] bm_mt_get_entries
+[23:03:50.718] [bmv2] [T] [thread 8082] bm_reset_state
+[23:03:50.718] [bmv2] [D] [thread 8082] Resetting simple_switch target-specific state
+[23:03:50.718] [bmv2] [D] [thread 8082] resetting PRE state
+[23:03:50.720] [bmv2] [T] [thread 8082] bm_set_default_action
+[23:03:50.720] [bmv2] [D] [thread 8082] Set default entry for table 'MyIngress.ipv4_lpm': MyIngress.drop - 
+[23:03:50.720] [bmv2] [T] [thread 8082] bm_set_default_action
+[23:03:50.720] [bmv2] [D] [thread 8082] Set default entry for table 'MyIngress.ecmp_group_to_nhop': MyIngress.drop - 
+[23:03:57.874] [bmv2] [T] [thread 8104] bm_get_config
+[23:03:57.874] [bmv2] [T] [thread 8104] bm_mt_get_entries
+[23:03:57.875] [bmv2] [T] [thread 8104] bm_mt_get_entries
+[23:03:57.875] [bmv2] [T] [thread 8104] bm_mt_get_entries
+[23:03:57.879] [bmv2] [T] [thread 8104] bm_reset_state
+[23:03:57.879] [bmv2] [D] [thread 8104] Resetting simple_switch target-specific state
+[23:03:57.879] [bmv2] [D] [thread 8104] resetting PRE state
+[23:03:57.881] [bmv2] [T] [thread 8104] bm_set_default_action
+[23:03:57.881] [bmv2] [D] [thread 8104] Set default entry for table 'MyIngress.ipv4_lpm': MyIngress.drop - 
+[23:03:57.881] [bmv2] [T] [thread 8104] bm_set_default_action
+[23:03:57.881] [bmv2] [D] [thread 8104] Set default entry for table 'MyIngress.ecmp_group_to_nhop': MyIngress.drop - 
+[23:07:57.515] [bmv2] [T] [thread 8136] bm_get_config
+[23:07:57.515] [bmv2] [T] [thread 8136] bm_mt_get_entries
+[23:07:57.515] [bmv2] [T] [thread 8136] bm_mt_get_entries
+[23:07:57.515] [bmv2] [T] [thread 8136] bm_mt_get_entries
+[23:07:57.519] [bmv2] [T] [thread 8136] bm_reset_state
+[23:07:57.519] [bmv2] [D] [thread 8136] Resetting simple_switch target-specific state
+[23:07:57.519] [bmv2] [D] [thread 8136] resetting PRE state
+[23:07:57.521] [bmv2] [T] [thread 8136] bm_set_default_action
+[23:07:57.521] [bmv2] [D] [thread 8136] Set default entry for table 'MyIngress.ipv4_lpm': MyIngress.drop - 
+[23:07:57.522] [bmv2] [T] [thread 8136] bm_set_default_action
+[23:07:57.522] [bmv2] [D] [thread 8136] Set default entry for table 'MyIngress.ecmp_group_to_nhop': MyIngress.drop - 
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory

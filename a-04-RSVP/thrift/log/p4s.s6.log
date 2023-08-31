@@ -1,0 +1,122 @@
+Calling target program-options parser
+[21:36:49.194] [bmv2] [D] [thread 44746] Set default default entry for table 'MyIngress.FEC_tbl': NoAction - 
+[21:36:49.194] [bmv2] [D] [thread 44746] Set default default entry for table 'tbl_rsvp460': rsvp460 - 
+[21:36:49.194] [bmv2] [D] [thread 44746] Set default default entry for table 'MyIngress.mpls_tbl': NoAction - 
+[21:36:49.194] [bmv2] [D] [thread 44746] Set default default entry for table 'tbl_drop': MyIngress.drop - 
+Adding interface s6-eth1 as port 1
+[21:36:49.195] [bmv2] [D] [thread 44746] Adding interface s6-eth1 as port 1
+Adding interface s6-eth2 as port 2
+[21:36:49.218] [bmv2] [D] [thread 44746] Adding interface s6-eth2 as port 2
+Adding interface s6-eth3 as port 3
+[21:36:49.237] [bmv2] [D] [thread 44746] Adding interface s6-eth3 as port 3
+[21:36:49.254] [bmv2] [I] [thread 44746] Starting Thrift server on port 9095
+[21:36:49.254] [bmv2] [I] [thread 44746] Thrift server was started
+[21:36:49.277] [bmv2] [D] [thread 44752] [0.0] [cxt 0] Processing packet received on port 1
+[21:36:49.277] [bmv2] [D] [thread 44752] [0.0] [cxt 0] Parser 'parser': start
+[21:36:49.277] [bmv2] [D] [thread 44752] [0.0] [cxt 0] Parser 'parser' entering state 'start'
+[21:36:49.277] [bmv2] [D] [thread 44752] [0.0] [cxt 0] Extracting header 'ethernet'
+[21:36:49.277] [bmv2] [D] [thread 44752] [0.0] [cxt 0] Parser state 'start': key is 86dd
+[21:36:49.277] [bmv2] [T] [thread 44752] [0.0] [cxt 0] Bytes parsed: 14
+[21:36:49.277] [bmv2] [D] [thread 44752] [0.0] [cxt 0] Parser 'parser': end
+[21:36:49.277] [bmv2] [D] [thread 44752] [0.0] [cxt 0] Pipeline 'ingress': start
+[21:36:49.277] [bmv2] [T] [thread 44752] [0.0] [cxt 0] /home/wly/p4-learning/exercises/a-04-RSVP/thrift/rsvp.p4(474) Condition "hdr.ipv4.isValid()" (node_2) is false
+[21:36:49.277] [bmv2] [T] [thread 44752] [0.0] [cxt 0] /home/wly/p4-learning/exercises/a-04-RSVP/thrift/rsvp.p4(477) Condition "hdr.mpls[0].isValid()" (node_4) is false
+[21:36:49.277] [bmv2] [T] [thread 44752] [0.0] [cxt 0] /home/wly/p4-learning/exercises/a-04-RSVP/thrift/rsvp.p4(482) Condition "meta.meter_color != 0" (node_7) is false
+[21:36:49.277] [bmv2] [D] [thread 44752] [0.0] [cxt 0] Pipeline 'ingress': end
+[21:36:49.277] [bmv2] [D] [thread 44752] [0.0] [cxt 0] Egress port is 0
+[21:36:49.277] [bmv2] [D] [thread 44752] [1.0] [cxt 0] Processing packet received on port 1
+[21:36:49.277] [bmv2] [D] [thread 44752] [1.0] [cxt 0] Parser 'parser': start
+[21:36:49.277] [bmv2] [D] [thread 44752] [1.0] [cxt 0] Parser 'parser' entering state 'start'
+[21:36:49.277] [bmv2] [D] [thread 44752] [1.0] [cxt 0] Extracting header 'ethernet'
+[21:36:49.277] [bmv2] [D] [thread 44752] [1.0] [cxt 0] Parser state 'start': key is 86dd
+[21:36:49.277] [bmv2] [T] [thread 44752] [1.0] [cxt 0] Bytes parsed: 14
+[21:36:49.277] [bmv2] [D] [thread 44752] [1.0] [cxt 0] Parser 'parser': end
+[21:36:49.277] [bmv2] [D] [thread 44752] [1.0] [cxt 0] Pipeline 'ingress': start
+[21:36:49.277] [bmv2] [T] [thread 44752] [1.0] [cxt 0] /home/wly/p4-learning/exercises/a-04-RSVP/thrift/rsvp.p4(474) Condition "hdr.ipv4.isValid()" (node_2) is false
+[21:36:49.277] [bmv2] [T] [thread 44752] [1.0] [cxt 0] /home/wly/p4-learning/exercises/a-04-RSVP/thrift/rsvp.p4(477) Condition "hdr.mpls[0].isValid()" (node_4) is false
+[21:36:49.277] [bmv2] [T] [thread 44752] [1.0] [cxt 0] /home/wly/p4-learning/exercises/a-04-RSVP/thrift/rsvp.p4(482) Condition "meta.meter_color != 0" (node_7) is false
+[21:36:49.277] [bmv2] [D] [thread 44752] [1.0] [cxt 0] Pipeline 'ingress': end
+[21:36:49.277] [bmv2] [D] [thread 44752] [1.0] [cxt 0] Egress port is 0
+[21:36:49.277] [bmv2] [D] [thread 44753] [0.0] [cxt 0] Pipeline 'egress': start
+[21:36:49.277] [bmv2] [D] [thread 44753] [0.0] [cxt 0] Pipeline 'egress': end
+[21:36:49.277] [bmv2] [D] [thread 44753] [0.0] [cxt 0] Deparser 'deparser': start
+[21:36:49.277] [bmv2] [T] [thread 44753] [0.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[21:36:49.277] [bmv2] [D] [thread 44753] [0.0] [cxt 0] Deparsing header 'ethernet'
+[21:36:49.277] [bmv2] [D] [thread 44753] [0.0] [cxt 0] Deparser 'deparser': end
+[21:36:49.277] [bmv2] [D] [thread 44753] [1.0] [cxt 0] Pipeline 'egress': start
+[21:36:49.277] [bmv2] [D] [thread 44753] [1.0] [cxt 0] Pipeline 'egress': end
+[21:36:49.277] [bmv2] [D] [thread 44757] [0.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[21:36:49.277] [bmv2] [D] [thread 44753] [1.0] [cxt 0] Deparser 'deparser': start
+[21:36:49.277] [bmv2] [T] [thread 44753] [1.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[21:36:49.277] [bmv2] [D] [thread 44753] [1.0] [cxt 0] Deparsing header 'ethernet'
+[21:36:49.277] [bmv2] [D] [thread 44753] [1.0] [cxt 0] Deparser 'deparser': end
+[21:36:49.277] [bmv2] [D] [thread 44757] [1.0] [cxt 0] Transmitting packet of size 86 out of port 0
+[21:37:08.756] [bmv2] [T] [thread 44944] bm_get_config
+[21:37:08.757] [bmv2] [T] [thread 44944] bm_mt_get_entries
+[21:37:08.757] [bmv2] [T] [thread 44944] bm_mt_get_entries
+[21:37:08.762] [bmv2] [T] [thread 44944] bm_reset_state
+[21:37:08.762] [bmv2] [D] [thread 44944] Resetting simple_switch target-specific state
+[21:37:08.762] [bmv2] [D] [thread 44944] resetting PRE state
+[21:37:08.770] [bmv2] [T] [thread 44944] bm_table_add_entry
+[21:37:08.770] [bmv2] [D] [thread 44944] Entry 0 added to table 'MyIngress.mpls_tbl'
+[21:37:08.770] [bmv2] [D] [thread 44944] Dumping entry 0
+Match key:
+* hdr.mpls[0].label   : EXACT     000001
+* hdr.mpls[0].s       : EXACT     00
+Action entry: MyIngress.mpls_forward - c23e3a7e09c1,1,
+
+[21:37:08.770] [bmv2] [T] [thread 44944] bm_table_add_entry
+[21:37:08.770] [bmv2] [D] [thread 44944] Entry 1 added to table 'MyIngress.mpls_tbl'
+[21:37:08.770] [bmv2] [D] [thread 44944] Dumping entry 1
+Match key:
+* hdr.mpls[0].label   : EXACT     000001
+* hdr.mpls[0].s       : EXACT     01
+Action entry: MyIngress.penultimate - c23e3a7e09c1,1,
+
+[21:37:08.770] [bmv2] [T] [thread 44944] bm_table_add_entry
+[21:37:08.770] [bmv2] [D] [thread 44944] Entry 2 added to table 'MyIngress.mpls_tbl'
+[21:37:08.770] [bmv2] [D] [thread 44944] Dumping entry 2
+Match key:
+* hdr.mpls[0].label   : EXACT     000002
+* hdr.mpls[0].s       : EXACT     00
+Action entry: MyIngress.mpls_forward - c23c9f2d390b,2,
+
+[21:37:08.770] [bmv2] [T] [thread 44944] bm_table_add_entry
+[21:37:08.770] [bmv2] [D] [thread 44944] Entry 3 added to table 'MyIngress.mpls_tbl'
+[21:37:08.770] [bmv2] [D] [thread 44944] Dumping entry 3
+Match key:
+* hdr.mpls[0].label   : EXACT     000002
+* hdr.mpls[0].s       : EXACT     01
+Action entry: MyIngress.penultimate - c23c9f2d390b,2,
+
+[21:37:08.771] [bmv2] [T] [thread 44944] bm_table_add_entry
+[21:37:08.771] [bmv2] [D] [thread 44944] Entry 4 added to table 'MyIngress.mpls_tbl'
+[21:37:08.771] [bmv2] [D] [thread 44944] Dumping entry 4
+Match key:
+* hdr.mpls[0].label   : EXACT     000003
+* hdr.mpls[0].s       : EXACT     00
+Action entry: MyIngress.mpls_forward - a2cb41eaaa04,3,
+
+[21:37:08.771] [bmv2] [T] [thread 44944] bm_table_add_entry
+[21:37:08.771] [bmv2] [D] [thread 44944] Entry 5 added to table 'MyIngress.mpls_tbl'
+[21:37:08.771] [bmv2] [D] [thread 44944] Dumping entry 5
+Match key:
+* hdr.mpls[0].label   : EXACT     000003
+* hdr.mpls[0].s       : EXACT     01
+Action entry: MyIngress.penultimate - a2cb41eaaa04,3,
+
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
+open: No such file or directory
