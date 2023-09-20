@@ -1,7 +1,7 @@
-# 0 "/home/wly/p4-learning/exercises/a-12-Fast-Reroute/p4src/fast_reroute.p4"
+# 0 "/home/wly/p4-learning/have-done-exercise/a-12-Fast-Reroute/p4src/fast_reroute.p4"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "/home/wly/p4-learning/exercises/a-12-Fast-Reroute/p4src/fast_reroute.p4"
+# 1 "/home/wly/p4-learning/have-done-exercise/a-12-Fast-Reroute/p4src/fast_reroute.p4"
 /* -*- P4_16 -*- */
 # 1 "/usr/local/share/p4c/p4include/core.p4" 1
 /*
@@ -86,7 +86,7 @@ match_kind {
     /// Longest-prefix match.
     lpm
 }
-# 3 "/home/wly/p4-learning/exercises/a-12-Fast-Reroute/p4src/fast_reroute.p4" 2
+# 3 "/home/wly/p4-learning/have-done-exercise/a-12-Fast-Reroute/p4src/fast_reroute.p4" 2
 # 1 "/usr/local/share/p4c/p4include/v1model.p4" 1
 /*
 Copyright 2013-present Barefoot Networks, Inc.
@@ -872,10 +872,10 @@ package V1Switch<H, M>(Parser<H, M> p,
                        ComputeChecksum<H, M> ck,
                        Deparser<H> dep
                        );
-# 4 "/home/wly/p4-learning/exercises/a-12-Fast-Reroute/p4src/fast_reroute.p4" 2
+# 4 "/home/wly/p4-learning/have-done-exercise/a-12-Fast-Reroute/p4src/fast_reroute.p4" 2
 
 //My includes
-# 1 "/home/wly/p4-learning/exercises/a-12-Fast-Reroute/p4src/include/headers.p4" 1
+# 1 "/home/wly/p4-learning/have-done-exercise/a-12-Fast-Reroute/p4src/include/headers.p4" 1
 /* -*- P4_16 -*- */
 # 1 "/usr/local/share/p4c/p4include/core.p4" 1
 /*
@@ -895,7 +895,7 @@ limitations under the License.
 */
 
 /* This is the P4-16 core library, which declares some built-in P4 constructs using P4 */
-# 3 "/home/wly/p4-learning/exercises/a-12-Fast-Reroute/p4src/include/headers.p4" 2
+# 3 "/home/wly/p4-learning/have-done-exercise/a-12-Fast-Reroute/p4src/include/headers.p4" 2
 # 1 "/usr/local/share/p4c/p4include/v1model.p4" 1
 /*
 Copyright 2013-present Barefoot Networks, Inc.
@@ -935,7 +935,7 @@ limitations under the License.
  * program expecting the behavior described above is compiled using
  * p4c, it may behave differently.
  */
-# 4 "/home/wly/p4-learning/exercises/a-12-Fast-Reroute/p4src/include/headers.p4" 2
+# 4 "/home/wly/p4-learning/have-done-exercise/a-12-Fast-Reroute/p4src/include/headers.p4" 2
 
 typedef bit<9> egressSpec_t;
 typedef bit<48> macAddr_t;
@@ -975,8 +975,8 @@ struct headers {
     ethernet_t ethernet;
     ipv4_t ipv4;
 }
-# 7 "/home/wly/p4-learning/exercises/a-12-Fast-Reroute/p4src/fast_reroute.p4" 2
-# 1 "/home/wly/p4-learning/exercises/a-12-Fast-Reroute/p4src/include/parsers.p4" 1
+# 7 "/home/wly/p4-learning/have-done-exercise/a-12-Fast-Reroute/p4src/fast_reroute.p4" 2
+# 1 "/home/wly/p4-learning/have-done-exercise/a-12-Fast-Reroute/p4src/include/parsers.p4" 1
 /*************************************************************************
 *********************** P A R S E R  *******************************
 *************************************************************************/
@@ -1020,7 +1020,7 @@ control MyDeparser(packet_out packet, in headers hdr) {
 
     }
 }
-# 8 "/home/wly/p4-learning/exercises/a-12-Fast-Reroute/p4src/fast_reroute.p4" 2
+# 8 "/home/wly/p4-learning/have-done-exercise/a-12-Fast-Reroute/p4src/fast_reroute.p4" 2
 
 // 下一跳的数量
 

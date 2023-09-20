@@ -1,0 +1,747 @@
+Calling target program-options parser
+[20:41:10.727] [bmv2] [D] [thread 17113] Set default default entry for table 'tbl_loadbalancer167': loadbalancer167 - 
+[20:41:10.727] [bmv2] [D] [thread 17113] Set default default entry for table 'MyIngress.ipv4_lpm': MyIngress.drop - 
+[20:41:10.727] [bmv2] [D] [thread 17113] Set default default entry for table 'MyIngress.ecmp_group_to_nhop': NoAction - 
+[20:41:10.727] [bmv2] [D] [thread 17113] Set default default entry for table 'MyIngress.egress_type': NoAction - 
+[20:41:10.727] [bmv2] [D] [thread 17113] Set default default entry for table 'tbl_update_flow_seed': MyIngress.update_flow_seed - 
+[20:41:10.727] [bmv2] [D] [thread 17113] Set default default entry for table 'tbl_drop': MyIngress.drop - 
+[20:41:10.727] [bmv2] [D] [thread 17113] Set default default entry for table 'tbl_loadbalancer235': loadbalancer235 - 
+[20:41:10.727] [bmv2] [D] [thread 17113] Set default default entry for table 'tbl_loadbalancer249': loadbalancer249 - 
+[20:41:10.727] [bmv2] [D] [thread 17113] Set default default entry for table 'tbl_loadbalancer254': loadbalancer254 - 
+[20:41:10.727] [bmv2] [D] [thread 17113] Set default default entry for table 'tbl_read_feedback_ts': MyEgress.read_feedback_ts - 
+[20:41:10.727] [bmv2] [D] [thread 17113] Set default default entry for table 'tbl_loadbalancer265': loadbalancer265 - 
+[20:41:10.727] [bmv2] [D] [thread 17113] Set default default entry for table 'tbl_loadbalancer269': loadbalancer269 - 
+[20:41:10.727] [bmv2] [D] [thread 17113] Set default default entry for table 'tbl_loadbalancer276': loadbalancer276 - 
+[20:41:10.727] [bmv2] [D] [thread 17113] Set default default entry for table 'tbl_loadbalancer287': loadbalancer287 - 
+Adding interface s18-eth1 as port 1
+[20:41:10.727] [bmv2] [D] [thread 17113] Adding interface s18-eth1 as port 1
+Adding interface s18-eth2 as port 2
+[20:41:10.755] [bmv2] [D] [thread 17113] Adding interface s18-eth2 as port 2
+Adding interface s18-eth3 as port 3
+[20:41:10.756] [bmv2] [D] [thread 17113] Adding interface s18-eth3 as port 3
+Adding interface s18-eth4 as port 4
+[20:41:10.774] [bmv2] [D] [thread 17113] Adding interface s18-eth4 as port 4
+[20:41:10.775] [bmv2] [I] [thread 17113] Starting Thrift server on port 9107
+[20:41:10.776] [bmv2] [I] [thread 17113] Thrift server was started
+[20:41:10.794] [bmv2] [D] [thread 17123] [0.0] [cxt 0] Processing packet received on port 4
+[20:41:10.794] [bmv2] [D] [thread 17123] [0.0] [cxt 0] Parser 'parser': start
+[20:41:10.794] [bmv2] [D] [thread 17123] [0.0] [cxt 0] Parser 'parser' entering state 'start'
+[20:41:10.794] [bmv2] [D] [thread 17123] [0.0] [cxt 0] Extracting header 'ethernet'
+[20:41:10.794] [bmv2] [D] [thread 17123] [0.0] [cxt 0] Parser state 'start': key is 86dd
+[20:41:10.794] [bmv2] [T] [thread 17123] [0.0] [cxt 0] Bytes parsed: 14
+[20:41:10.794] [bmv2] [D] [thread 17123] [0.0] [cxt 0] Parser 'parser': end
+[20:41:10.794] [bmv2] [D] [thread 17123] [0.0] [cxt 0] Pipeline 'ingress': start
+[20:41:10.794] [bmv2] [T] [thread 17123] [0.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(165) Condition "standard_metadata.instance_type == 4" (node_2) is false
+[20:41:10.794] [bmv2] [T] [thread 17123] [0.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(175) Condition "hdr.ipv4.isValid() && hdr.ipv4.ttl > 1" (node_4) is false
+[20:41:10.794] [bmv2] [T] [thread 17123] [0.0] [cxt 0] Applying table 'MyIngress.egress_type'
+[20:41:10.794] [bmv2] [D] [thread 17123] [0.0] [cxt 0] Looking up key:
+* standard_metadata.egress_spec: 0000
+
+[20:41:10.794] [bmv2] [D] [thread 17123] [0.0] [cxt 0] Table 'MyIngress.egress_type': miss
+[20:41:10.794] [bmv2] [D] [thread 17123] [0.0] [cxt 0] Action entry is NoAction - 
+[20:41:10.794] [bmv2] [T] [thread 17123] [0.0] [cxt 0] Action NoAction
+[20:41:10.794] [bmv2] [T] [thread 17123] [0.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(191) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType == TYPE_FEEDBACK && meta.egress_type == TYPE_EGRESS_HOST" (node_8) is false
+[20:41:10.794] [bmv2] [D] [thread 17123] [0.0] [cxt 0] Pipeline 'ingress': end
+[20:41:10.794] [bmv2] [D] [thread 17123] [0.0] [cxt 0] Egress port is 0
+[20:41:10.795] [bmv2] [D] [thread 17124] [0.0] [cxt 0] Pipeline 'egress': start
+[20:41:10.795] [bmv2] [T] [thread 17124] [0.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(234) Condition "standard_metadata.instance_type == 2" (node_13) is false
+[20:41:10.795] [bmv2] [T] [thread 17124] [0.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(239) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType != TYPE_FEEDBACK" (node_15) is true
+[20:41:10.795] [bmv2] [T] [thread 17124] [0.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(241) Condition "hdr.tcp.isValid()" (node_16) is false
+[20:41:10.795] [bmv2] [D] [thread 17124] [0.0] [cxt 0] Pipeline 'egress': end
+[20:41:10.795] [bmv2] [D] [thread 17124] [0.0] [cxt 0] Deparser 'deparser': start
+[20:41:10.795] [bmv2] [T] [thread 17124] [0.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[20:41:10.795] [bmv2] [D] [thread 17124] [0.0] [cxt 0] Deparsing header 'ethernet'
+[20:41:10.795] [bmv2] [D] [thread 17124] [0.0] [cxt 0] Deparser 'deparser': end
+[20:41:10.795] [bmv2] [D] [thread 17128] [0.0] [cxt 0] Transmitting packet of size 213 out of port 0
+[20:41:10.811] [bmv2] [D] [thread 17123] [1.0] [cxt 0] Processing packet received on port 4
+[20:41:10.811] [bmv2] [D] [thread 17123] [1.0] [cxt 0] Parser 'parser': start
+[20:41:10.811] [bmv2] [D] [thread 17123] [1.0] [cxt 0] Parser 'parser' entering state 'start'
+[20:41:10.811] [bmv2] [D] [thread 17123] [1.0] [cxt 0] Extracting header 'ethernet'
+[20:41:10.811] [bmv2] [D] [thread 17123] [1.0] [cxt 0] Parser state 'start': key is 86dd
+[20:41:10.811] [bmv2] [T] [thread 17123] [1.0] [cxt 0] Bytes parsed: 14
+[20:41:10.811] [bmv2] [D] [thread 17123] [1.0] [cxt 0] Parser 'parser': end
+[20:41:10.811] [bmv2] [D] [thread 17123] [1.0] [cxt 0] Pipeline 'ingress': start
+[20:41:10.811] [bmv2] [T] [thread 17123] [1.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(165) Condition "standard_metadata.instance_type == 4" (node_2) is false
+[20:41:10.811] [bmv2] [T] [thread 17123] [1.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(175) Condition "hdr.ipv4.isValid() && hdr.ipv4.ttl > 1" (node_4) is false
+[20:41:10.811] [bmv2] [T] [thread 17123] [1.0] [cxt 0] Applying table 'MyIngress.egress_type'
+[20:41:10.811] [bmv2] [D] [thread 17123] [1.0] [cxt 0] Looking up key:
+* standard_metadata.egress_spec: 0000
+
+[20:41:10.811] [bmv2] [D] [thread 17123] [1.0] [cxt 0] Table 'MyIngress.egress_type': miss
+[20:41:10.811] [bmv2] [D] [thread 17123] [1.0] [cxt 0] Action entry is NoAction - 
+[20:41:10.811] [bmv2] [T] [thread 17123] [1.0] [cxt 0] Action NoAction
+[20:41:10.811] [bmv2] [T] [thread 17123] [1.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(191) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType == TYPE_FEEDBACK && meta.egress_type == TYPE_EGRESS_HOST" (node_8) is false
+[20:41:10.811] [bmv2] [D] [thread 17123] [1.0] [cxt 0] Pipeline 'ingress': end
+[20:41:10.811] [bmv2] [D] [thread 17123] [1.0] [cxt 0] Egress port is 0
+[20:41:10.811] [bmv2] [D] [thread 17124] [1.0] [cxt 0] Pipeline 'egress': start
+[20:41:10.811] [bmv2] [T] [thread 17124] [1.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(234) Condition "standard_metadata.instance_type == 2" (node_13) is false
+[20:41:10.811] [bmv2] [T] [thread 17124] [1.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(239) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType != TYPE_FEEDBACK" (node_15) is true
+[20:41:10.811] [bmv2] [T] [thread 17124] [1.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(241) Condition "hdr.tcp.isValid()" (node_16) is false
+[20:41:10.811] [bmv2] [D] [thread 17124] [1.0] [cxt 0] Pipeline 'egress': end
+[20:41:10.811] [bmv2] [D] [thread 17124] [1.0] [cxt 0] Deparser 'deparser': start
+[20:41:10.811] [bmv2] [T] [thread 17124] [1.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[20:41:10.811] [bmv2] [D] [thread 17124] [1.0] [cxt 0] Deparsing header 'ethernet'
+[20:41:10.811] [bmv2] [D] [thread 17124] [1.0] [cxt 0] Deparser 'deparser': end
+[20:41:10.811] [bmv2] [D] [thread 17128] [1.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[20:41:10.829] [bmv2] [D] [thread 17123] [2.0] [cxt 0] Processing packet received on port 1
+[20:41:10.829] [bmv2] [D] [thread 17123] [2.0] [cxt 0] Parser 'parser': start
+[20:41:10.829] [bmv2] [D] [thread 17123] [2.0] [cxt 0] Parser 'parser' entering state 'start'
+[20:41:10.829] [bmv2] [D] [thread 17123] [2.0] [cxt 0] Extracting header 'ethernet'
+[20:41:10.829] [bmv2] [D] [thread 17123] [2.0] [cxt 0] Parser state 'start': key is 86dd
+[20:41:10.829] [bmv2] [T] [thread 17123] [2.0] [cxt 0] Bytes parsed: 14
+[20:41:10.829] [bmv2] [D] [thread 17123] [2.0] [cxt 0] Parser 'parser': end
+[20:41:10.829] [bmv2] [D] [thread 17123] [2.0] [cxt 0] Pipeline 'ingress': start
+[20:41:10.829] [bmv2] [T] [thread 17123] [2.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(165) Condition "standard_metadata.instance_type == 4" (node_2) is false
+[20:41:10.829] [bmv2] [T] [thread 17123] [2.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(175) Condition "hdr.ipv4.isValid() && hdr.ipv4.ttl > 1" (node_4) is false
+[20:41:10.829] [bmv2] [T] [thread 17123] [2.0] [cxt 0] Applying table 'MyIngress.egress_type'
+[20:41:10.829] [bmv2] [D] [thread 17123] [2.0] [cxt 0] Looking up key:
+* standard_metadata.egress_spec: 0000
+
+[20:41:10.829] [bmv2] [D] [thread 17123] [2.0] [cxt 0] Table 'MyIngress.egress_type': miss
+[20:41:10.829] [bmv2] [D] [thread 17123] [2.0] [cxt 0] Action entry is NoAction - 
+[20:41:10.829] [bmv2] [T] [thread 17123] [2.0] [cxt 0] Action NoAction
+[20:41:10.829] [bmv2] [T] [thread 17123] [2.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(191) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType == TYPE_FEEDBACK && meta.egress_type == TYPE_EGRESS_HOST" (node_8) is false
+[20:41:10.829] [bmv2] [D] [thread 17123] [2.0] [cxt 0] Pipeline 'ingress': end
+[20:41:10.829] [bmv2] [D] [thread 17123] [2.0] [cxt 0] Egress port is 0
+[20:41:10.829] [bmv2] [D] [thread 17124] [2.0] [cxt 0] Pipeline 'egress': start
+[20:41:10.829] [bmv2] [T] [thread 17124] [2.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(234) Condition "standard_metadata.instance_type == 2" (node_13) is false
+[20:41:10.829] [bmv2] [T] [thread 17124] [2.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(239) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType != TYPE_FEEDBACK" (node_15) is true
+[20:41:10.829] [bmv2] [T] [thread 17124] [2.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(241) Condition "hdr.tcp.isValid()" (node_16) is false
+[20:41:10.829] [bmv2] [D] [thread 17124] [2.0] [cxt 0] Pipeline 'egress': end
+[20:41:10.829] [bmv2] [D] [thread 17124] [2.0] [cxt 0] Deparser 'deparser': start
+[20:41:10.829] [bmv2] [T] [thread 17124] [2.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[20:41:10.829] [bmv2] [D] [thread 17124] [2.0] [cxt 0] Deparsing header 'ethernet'
+[20:41:10.829] [bmv2] [D] [thread 17124] [2.0] [cxt 0] Deparser 'deparser': end
+[20:41:10.830] [bmv2] [D] [thread 17128] [2.0] [cxt 0] Transmitting packet of size 203 out of port 0
+[20:41:10.865] [bmv2] [D] [thread 17123] [3.0] [cxt 0] Processing packet received on port 4
+[20:41:10.865] [bmv2] [D] [thread 17123] [3.0] [cxt 0] Parser 'parser': start
+[20:41:10.865] [bmv2] [D] [thread 17123] [3.0] [cxt 0] Parser 'parser' entering state 'start'
+[20:41:10.865] [bmv2] [D] [thread 17123] [3.0] [cxt 0] Extracting header 'ethernet'
+[20:41:10.865] [bmv2] [D] [thread 17123] [3.0] [cxt 0] Parser state 'start': key is 86dd
+[20:41:10.865] [bmv2] [T] [thread 17123] [3.0] [cxt 0] Bytes parsed: 14
+[20:41:10.865] [bmv2] [D] [thread 17123] [3.0] [cxt 0] Parser 'parser': end
+[20:41:10.865] [bmv2] [D] [thread 17123] [3.0] [cxt 0] Pipeline 'ingress': start
+[20:41:10.865] [bmv2] [T] [thread 17123] [3.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(165) Condition "standard_metadata.instance_type == 4" (node_2) is false
+[20:41:10.865] [bmv2] [T] [thread 17123] [3.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(175) Condition "hdr.ipv4.isValid() && hdr.ipv4.ttl > 1" (node_4) is false
+[20:41:10.865] [bmv2] [T] [thread 17123] [3.0] [cxt 0] Applying table 'MyIngress.egress_type'
+[20:41:10.865] [bmv2] [D] [thread 17123] [3.0] [cxt 0] Looking up key:
+* standard_metadata.egress_spec: 0000
+
+[20:41:10.865] [bmv2] [D] [thread 17123] [3.0] [cxt 0] Table 'MyIngress.egress_type': miss
+[20:41:10.865] [bmv2] [D] [thread 17123] [3.0] [cxt 0] Action entry is NoAction - 
+[20:41:10.865] [bmv2] [T] [thread 17123] [3.0] [cxt 0] Action NoAction
+[20:41:10.865] [bmv2] [T] [thread 17123] [3.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(191) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType == TYPE_FEEDBACK && meta.egress_type == TYPE_EGRESS_HOST" (node_8) is false
+[20:41:10.865] [bmv2] [D] [thread 17123] [3.0] [cxt 0] Pipeline 'ingress': end
+[20:41:10.865] [bmv2] [D] [thread 17123] [3.0] [cxt 0] Egress port is 0
+[20:41:10.865] [bmv2] [D] [thread 17124] [3.0] [cxt 0] Pipeline 'egress': start
+[20:41:10.865] [bmv2] [T] [thread 17124] [3.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(234) Condition "standard_metadata.instance_type == 2" (node_13) is false
+[20:41:10.865] [bmv2] [T] [thread 17124] [3.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(239) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType != TYPE_FEEDBACK" (node_15) is true
+[20:41:10.865] [bmv2] [T] [thread 17124] [3.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(241) Condition "hdr.tcp.isValid()" (node_16) is false
+[20:41:10.865] [bmv2] [D] [thread 17124] [3.0] [cxt 0] Pipeline 'egress': end
+[20:41:10.865] [bmv2] [D] [thread 17124] [3.0] [cxt 0] Deparser 'deparser': start
+[20:41:10.865] [bmv2] [T] [thread 17124] [3.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[20:41:10.865] [bmv2] [D] [thread 17124] [3.0] [cxt 0] Deparsing header 'ethernet'
+[20:41:10.866] [bmv2] [D] [thread 17124] [3.0] [cxt 0] Deparser 'deparser': end
+[20:41:10.866] [bmv2] [D] [thread 17128] [3.0] [cxt 0] Transmitting packet of size 213 out of port 0
+[20:41:10.892] [bmv2] [D] [thread 17123] [4.0] [cxt 0] Processing packet received on port 3
+[20:41:10.892] [bmv2] [D] [thread 17123] [4.0] [cxt 0] Parser 'parser': start
+[20:41:10.892] [bmv2] [D] [thread 17123] [4.0] [cxt 0] Parser 'parser' entering state 'start'
+[20:41:10.892] [bmv2] [D] [thread 17123] [4.0] [cxt 0] Extracting header 'ethernet'
+[20:41:10.892] [bmv2] [D] [thread 17123] [4.0] [cxt 0] Parser state 'start': key is 86dd
+[20:41:10.892] [bmv2] [T] [thread 17123] [4.0] [cxt 0] Bytes parsed: 14
+[20:41:10.892] [bmv2] [D] [thread 17123] [4.0] [cxt 0] Parser 'parser': end
+[20:41:10.892] [bmv2] [D] [thread 17123] [4.0] [cxt 0] Pipeline 'ingress': start
+[20:41:10.892] [bmv2] [T] [thread 17123] [4.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(165) Condition "standard_metadata.instance_type == 4" (node_2) is false
+[20:41:10.892] [bmv2] [T] [thread 17123] [4.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(175) Condition "hdr.ipv4.isValid() && hdr.ipv4.ttl > 1" (node_4) is false
+[20:41:10.892] [bmv2] [T] [thread 17123] [4.0] [cxt 0] Applying table 'MyIngress.egress_type'
+[20:41:10.892] [bmv2] [D] [thread 17123] [4.0] [cxt 0] Looking up key:
+* standard_metadata.egress_spec: 0000
+
+[20:41:10.892] [bmv2] [D] [thread 17123] [4.0] [cxt 0] Table 'MyIngress.egress_type': miss
+[20:41:10.892] [bmv2] [D] [thread 17123] [4.0] [cxt 0] Action entry is NoAction - 
+[20:41:10.892] [bmv2] [T] [thread 17123] [4.0] [cxt 0] Action NoAction
+[20:41:10.892] [bmv2] [T] [thread 17123] [4.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(191) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType == TYPE_FEEDBACK && meta.egress_type == TYPE_EGRESS_HOST" (node_8) is false
+[20:41:10.892] [bmv2] [D] [thread 17123] [4.0] [cxt 0] Pipeline 'ingress': end
+[20:41:10.892] [bmv2] [D] [thread 17123] [4.0] [cxt 0] Egress port is 0
+[20:41:10.892] [bmv2] [D] [thread 17124] [4.0] [cxt 0] Pipeline 'egress': start
+[20:41:10.892] [bmv2] [T] [thread 17124] [4.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(234) Condition "standard_metadata.instance_type == 2" (node_13) is false
+[20:41:10.892] [bmv2] [T] [thread 17124] [4.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(239) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType != TYPE_FEEDBACK" (node_15) is true
+[20:41:10.892] [bmv2] [T] [thread 17124] [4.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(241) Condition "hdr.tcp.isValid()" (node_16) is false
+[20:41:10.892] [bmv2] [D] [thread 17124] [4.0] [cxt 0] Pipeline 'egress': end
+[20:41:10.892] [bmv2] [D] [thread 17124] [4.0] [cxt 0] Deparser 'deparser': start
+[20:41:10.892] [bmv2] [T] [thread 17124] [4.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[20:41:10.892] [bmv2] [D] [thread 17124] [4.0] [cxt 0] Deparsing header 'ethernet'
+[20:41:10.892] [bmv2] [D] [thread 17124] [4.0] [cxt 0] Deparser 'deparser': end
+[20:41:10.892] [bmv2] [D] [thread 17128] [4.0] [cxt 0] Transmitting packet of size 213 out of port 0
+[20:41:10.939] [bmv2] [D] [thread 17123] [5.0] [cxt 0] Processing packet received on port 3
+[20:41:10.939] [bmv2] [D] [thread 17123] [5.0] [cxt 0] Parser 'parser': start
+[20:41:10.939] [bmv2] [D] [thread 17123] [5.0] [cxt 0] Parser 'parser' entering state 'start'
+[20:41:10.939] [bmv2] [D] [thread 17123] [5.0] [cxt 0] Extracting header 'ethernet'
+[20:41:10.939] [bmv2] [D] [thread 17123] [5.0] [cxt 0] Parser state 'start': key is 86dd
+[20:41:10.939] [bmv2] [T] [thread 17123] [5.0] [cxt 0] Bytes parsed: 14
+[20:41:10.939] [bmv2] [D] [thread 17123] [5.0] [cxt 0] Parser 'parser': end
+[20:41:10.939] [bmv2] [D] [thread 17123] [5.0] [cxt 0] Pipeline 'ingress': start
+[20:41:10.939] [bmv2] [T] [thread 17123] [5.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(165) Condition "standard_metadata.instance_type == 4" (node_2) is false
+[20:41:10.939] [bmv2] [T] [thread 17123] [5.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(175) Condition "hdr.ipv4.isValid() && hdr.ipv4.ttl > 1" (node_4) is false
+[20:41:10.939] [bmv2] [T] [thread 17123] [5.0] [cxt 0] Applying table 'MyIngress.egress_type'
+[20:41:10.939] [bmv2] [D] [thread 17123] [5.0] [cxt 0] Looking up key:
+* standard_metadata.egress_spec: 0000
+
+[20:41:10.939] [bmv2] [D] [thread 17123] [5.0] [cxt 0] Table 'MyIngress.egress_type': miss
+[20:41:10.939] [bmv2] [D] [thread 17123] [5.0] [cxt 0] Action entry is NoAction - 
+[20:41:10.939] [bmv2] [T] [thread 17123] [5.0] [cxt 0] Action NoAction
+[20:41:10.939] [bmv2] [T] [thread 17123] [5.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(191) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType == TYPE_FEEDBACK && meta.egress_type == TYPE_EGRESS_HOST" (node_8) is false
+[20:41:10.939] [bmv2] [D] [thread 17123] [5.0] [cxt 0] Pipeline 'ingress': end
+[20:41:10.939] [bmv2] [D] [thread 17123] [5.0] [cxt 0] Egress port is 0
+[20:41:10.939] [bmv2] [D] [thread 17124] [5.0] [cxt 0] Pipeline 'egress': start
+[20:41:10.939] [bmv2] [T] [thread 17124] [5.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(234) Condition "standard_metadata.instance_type == 2" (node_13) is false
+[20:41:10.939] [bmv2] [T] [thread 17124] [5.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(239) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType != TYPE_FEEDBACK" (node_15) is true
+[20:41:10.939] [bmv2] [T] [thread 17124] [5.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(241) Condition "hdr.tcp.isValid()" (node_16) is false
+[20:41:10.939] [bmv2] [D] [thread 17124] [5.0] [cxt 0] Pipeline 'egress': end
+[20:41:10.939] [bmv2] [D] [thread 17124] [5.0] [cxt 0] Deparser 'deparser': start
+[20:41:10.939] [bmv2] [T] [thread 17124] [5.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[20:41:10.939] [bmv2] [D] [thread 17124] [5.0] [cxt 0] Deparsing header 'ethernet'
+[20:41:10.939] [bmv2] [D] [thread 17124] [5.0] [cxt 0] Deparser 'deparser': end
+[20:41:10.939] [bmv2] [D] [thread 17128] [5.0] [cxt 0] Transmitting packet of size 110 out of port 0
+[20:41:10.975] [bmv2] [D] [thread 17123] [6.0] [cxt 0] Processing packet received on port 1
+[20:41:10.975] [bmv2] [D] [thread 17123] [6.0] [cxt 0] Parser 'parser': start
+[20:41:10.975] [bmv2] [D] [thread 17123] [6.0] [cxt 0] Parser 'parser' entering state 'start'
+[20:41:10.975] [bmv2] [D] [thread 17123] [6.0] [cxt 0] Extracting header 'ethernet'
+[20:41:10.975] [bmv2] [D] [thread 17123] [6.0] [cxt 0] Parser state 'start': key is 86dd
+[20:41:10.975] [bmv2] [T] [thread 17123] [6.0] [cxt 0] Bytes parsed: 14
+[20:41:10.975] [bmv2] [D] [thread 17123] [6.0] [cxt 0] Parser 'parser': end
+[20:41:10.975] [bmv2] [D] [thread 17123] [6.0] [cxt 0] Pipeline 'ingress': start
+[20:41:10.975] [bmv2] [T] [thread 17123] [6.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(165) Condition "standard_metadata.instance_type == 4" (node_2) is false
+[20:41:10.975] [bmv2] [T] [thread 17123] [6.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(175) Condition "hdr.ipv4.isValid() && hdr.ipv4.ttl > 1" (node_4) is false
+[20:41:10.975] [bmv2] [T] [thread 17123] [6.0] [cxt 0] Applying table 'MyIngress.egress_type'
+[20:41:10.975] [bmv2] [D] [thread 17123] [6.0] [cxt 0] Looking up key:
+* standard_metadata.egress_spec: 0000
+
+[20:41:10.975] [bmv2] [D] [thread 17123] [6.0] [cxt 0] Table 'MyIngress.egress_type': miss
+[20:41:10.975] [bmv2] [D] [thread 17123] [6.0] [cxt 0] Action entry is NoAction - 
+[20:41:10.975] [bmv2] [T] [thread 17123] [6.0] [cxt 0] Action NoAction
+[20:41:10.975] [bmv2] [T] [thread 17123] [6.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(191) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType == TYPE_FEEDBACK && meta.egress_type == TYPE_EGRESS_HOST" (node_8) is false
+[20:41:10.975] [bmv2] [D] [thread 17123] [6.0] [cxt 0] Pipeline 'ingress': end
+[20:41:10.975] [bmv2] [D] [thread 17123] [6.0] [cxt 0] Egress port is 0
+[20:41:10.975] [bmv2] [D] [thread 17124] [6.0] [cxt 0] Pipeline 'egress': start
+[20:41:10.975] [bmv2] [T] [thread 17124] [6.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(234) Condition "standard_metadata.instance_type == 2" (node_13) is false
+[20:41:10.975] [bmv2] [T] [thread 17124] [6.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(239) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType != TYPE_FEEDBACK" (node_15) is true
+[20:41:10.975] [bmv2] [T] [thread 17124] [6.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(241) Condition "hdr.tcp.isValid()" (node_16) is false
+[20:41:10.975] [bmv2] [D] [thread 17124] [6.0] [cxt 0] Pipeline 'egress': end
+[20:41:10.975] [bmv2] [D] [thread 17124] [6.0] [cxt 0] Deparser 'deparser': start
+[20:41:10.975] [bmv2] [T] [thread 17124] [6.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[20:41:10.975] [bmv2] [D] [thread 17124] [6.0] [cxt 0] Deparsing header 'ethernet'
+[20:41:10.975] [bmv2] [D] [thread 17124] [6.0] [cxt 0] Deparser 'deparser': end
+[20:41:10.975] [bmv2] [D] [thread 17128] [6.0] [cxt 0] Transmitting packet of size 110 out of port 0
+[20:41:10.989] [bmv2] [D] [thread 17123] [7.0] [cxt 0] Processing packet received on port 1
+[20:41:10.989] [bmv2] [D] [thread 17123] [7.0] [cxt 0] Parser 'parser': start
+[20:41:10.989] [bmv2] [D] [thread 17123] [7.0] [cxt 0] Parser 'parser' entering state 'start'
+[20:41:10.989] [bmv2] [D] [thread 17123] [7.0] [cxt 0] Extracting header 'ethernet'
+[20:41:10.989] [bmv2] [D] [thread 17123] [7.0] [cxt 0] Parser state 'start': key is 86dd
+[20:41:10.989] [bmv2] [T] [thread 17123] [7.0] [cxt 0] Bytes parsed: 14
+[20:41:10.989] [bmv2] [D] [thread 17123] [7.0] [cxt 0] Parser 'parser': end
+[20:41:10.989] [bmv2] [D] [thread 17123] [7.0] [cxt 0] Pipeline 'ingress': start
+[20:41:10.989] [bmv2] [T] [thread 17123] [7.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(165) Condition "standard_metadata.instance_type == 4" (node_2) is false
+[20:41:10.989] [bmv2] [T] [thread 17123] [7.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(175) Condition "hdr.ipv4.isValid() && hdr.ipv4.ttl > 1" (node_4) is false
+[20:41:10.989] [bmv2] [T] [thread 17123] [7.0] [cxt 0] Applying table 'MyIngress.egress_type'
+[20:41:10.989] [bmv2] [D] [thread 17123] [7.0] [cxt 0] Looking up key:
+* standard_metadata.egress_spec: 0000
+
+[20:41:10.989] [bmv2] [D] [thread 17123] [7.0] [cxt 0] Table 'MyIngress.egress_type': miss
+[20:41:10.989] [bmv2] [D] [thread 17123] [7.0] [cxt 0] Action entry is NoAction - 
+[20:41:10.989] [bmv2] [T] [thread 17123] [7.0] [cxt 0] Action NoAction
+[20:41:10.989] [bmv2] [T] [thread 17123] [7.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(191) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType == TYPE_FEEDBACK && meta.egress_type == TYPE_EGRESS_HOST" (node_8) is false
+[20:41:10.989] [bmv2] [D] [thread 17123] [7.0] [cxt 0] Pipeline 'ingress': end
+[20:41:10.989] [bmv2] [D] [thread 17123] [7.0] [cxt 0] Egress port is 0
+[20:41:10.989] [bmv2] [D] [thread 17124] [7.0] [cxt 0] Pipeline 'egress': start
+[20:41:10.989] [bmv2] [T] [thread 17124] [7.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(234) Condition "standard_metadata.instance_type == 2" (node_13) is false
+[20:41:10.989] [bmv2] [T] [thread 17124] [7.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(239) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType != TYPE_FEEDBACK" (node_15) is true
+[20:41:10.989] [bmv2] [T] [thread 17124] [7.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(241) Condition "hdr.tcp.isValid()" (node_16) is false
+[20:41:10.989] [bmv2] [D] [thread 17124] [7.0] [cxt 0] Pipeline 'egress': end
+[20:41:10.989] [bmv2] [D] [thread 17124] [7.0] [cxt 0] Deparser 'deparser': start
+[20:41:10.989] [bmv2] [T] [thread 17124] [7.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[20:41:10.989] [bmv2] [D] [thread 17124] [7.0] [cxt 0] Deparsing header 'ethernet'
+[20:41:10.989] [bmv2] [D] [thread 17124] [7.0] [cxt 0] Deparser 'deparser': end
+[20:41:10.989] [bmv2] [D] [thread 17128] [7.0] [cxt 0] Transmitting packet of size 213 out of port 0
+[20:41:10.994] [bmv2] [D] [thread 17123] [8.0] [cxt 0] Processing packet received on port 4
+[20:41:10.994] [bmv2] [D] [thread 17123] [8.0] [cxt 0] Parser 'parser': start
+[20:41:10.994] [bmv2] [D] [thread 17123] [8.0] [cxt 0] Parser 'parser' entering state 'start'
+[20:41:10.994] [bmv2] [D] [thread 17123] [8.0] [cxt 0] Extracting header 'ethernet'
+[20:41:10.994] [bmv2] [D] [thread 17123] [8.0] [cxt 0] Parser state 'start': key is 86dd
+[20:41:10.994] [bmv2] [T] [thread 17123] [8.0] [cxt 0] Bytes parsed: 14
+[20:41:10.994] [bmv2] [D] [thread 17123] [8.0] [cxt 0] Parser 'parser': end
+[20:41:10.994] [bmv2] [D] [thread 17123] [8.0] [cxt 0] Pipeline 'ingress': start
+[20:41:10.994] [bmv2] [T] [thread 17123] [8.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(165) Condition "standard_metadata.instance_type == 4" (node_2) is false
+[20:41:10.994] [bmv2] [T] [thread 17123] [8.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(175) Condition "hdr.ipv4.isValid() && hdr.ipv4.ttl > 1" (node_4) is false
+[20:41:10.994] [bmv2] [T] [thread 17123] [8.0] [cxt 0] Applying table 'MyIngress.egress_type'
+[20:41:10.994] [bmv2] [D] [thread 17123] [8.0] [cxt 0] Looking up key:
+* standard_metadata.egress_spec: 0000
+
+[20:41:10.994] [bmv2] [D] [thread 17123] [8.0] [cxt 0] Table 'MyIngress.egress_type': miss
+[20:41:10.994] [bmv2] [D] [thread 17123] [8.0] [cxt 0] Action entry is NoAction - 
+[20:41:10.994] [bmv2] [T] [thread 17123] [8.0] [cxt 0] Action NoAction
+[20:41:10.994] [bmv2] [T] [thread 17123] [8.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(191) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType == TYPE_FEEDBACK && meta.egress_type == TYPE_EGRESS_HOST" (node_8) is false
+[20:41:10.994] [bmv2] [D] [thread 17123] [8.0] [cxt 0] Pipeline 'ingress': end
+[20:41:10.994] [bmv2] [D] [thread 17123] [8.0] [cxt 0] Egress port is 0
+[20:41:10.994] [bmv2] [D] [thread 17124] [8.0] [cxt 0] Pipeline 'egress': start
+[20:41:10.994] [bmv2] [T] [thread 17124] [8.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(234) Condition "standard_metadata.instance_type == 2" (node_13) is false
+[20:41:10.994] [bmv2] [T] [thread 17124] [8.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(239) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType != TYPE_FEEDBACK" (node_15) is true
+[20:41:10.994] [bmv2] [T] [thread 17124] [8.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(241) Condition "hdr.tcp.isValid()" (node_16) is false
+[20:41:10.994] [bmv2] [D] [thread 17124] [8.0] [cxt 0] Pipeline 'egress': end
+[20:41:10.994] [bmv2] [D] [thread 17124] [8.0] [cxt 0] Deparser 'deparser': start
+[20:41:10.994] [bmv2] [T] [thread 17124] [8.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[20:41:10.994] [bmv2] [D] [thread 17124] [8.0] [cxt 0] Deparsing header 'ethernet'
+[20:41:10.994] [bmv2] [D] [thread 17124] [8.0] [cxt 0] Deparser 'deparser': end
+[20:41:10.994] [bmv2] [D] [thread 17128] [8.0] [cxt 0] Transmitting packet of size 201 out of port 0
+[20:41:11.020] [bmv2] [D] [thread 17123] [9.0] [cxt 0] Processing packet received on port 3
+[20:41:11.020] [bmv2] [D] [thread 17123] [9.0] [cxt 0] Parser 'parser': start
+[20:41:11.020] [bmv2] [D] [thread 17123] [9.0] [cxt 0] Parser 'parser' entering state 'start'
+[20:41:11.020] [bmv2] [D] [thread 17123] [9.0] [cxt 0] Extracting header 'ethernet'
+[20:41:11.020] [bmv2] [D] [thread 17123] [9.0] [cxt 0] Parser state 'start': key is 86dd
+[20:41:11.020] [bmv2] [T] [thread 17123] [9.0] [cxt 0] Bytes parsed: 14
+[20:41:11.020] [bmv2] [D] [thread 17123] [9.0] [cxt 0] Parser 'parser': end
+[20:41:11.020] [bmv2] [D] [thread 17123] [9.0] [cxt 0] Pipeline 'ingress': start
+[20:41:11.020] [bmv2] [T] [thread 17123] [9.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(165) Condition "standard_metadata.instance_type == 4" (node_2) is false
+[20:41:11.020] [bmv2] [T] [thread 17123] [9.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(175) Condition "hdr.ipv4.isValid() && hdr.ipv4.ttl > 1" (node_4) is false
+[20:41:11.020] [bmv2] [T] [thread 17123] [9.0] [cxt 0] Applying table 'MyIngress.egress_type'
+[20:41:11.020] [bmv2] [D] [thread 17123] [9.0] [cxt 0] Looking up key:
+* standard_metadata.egress_spec: 0000
+
+[20:41:11.020] [bmv2] [D] [thread 17123] [9.0] [cxt 0] Table 'MyIngress.egress_type': miss
+[20:41:11.020] [bmv2] [D] [thread 17123] [9.0] [cxt 0] Action entry is NoAction - 
+[20:41:11.020] [bmv2] [T] [thread 17123] [9.0] [cxt 0] Action NoAction
+[20:41:11.020] [bmv2] [T] [thread 17123] [9.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(191) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType == TYPE_FEEDBACK && meta.egress_type == TYPE_EGRESS_HOST" (node_8) is false
+[20:41:11.020] [bmv2] [D] [thread 17123] [9.0] [cxt 0] Pipeline 'ingress': end
+[20:41:11.020] [bmv2] [D] [thread 17123] [9.0] [cxt 0] Egress port is 0
+[20:41:11.020] [bmv2] [D] [thread 17124] [9.0] [cxt 0] Pipeline 'egress': start
+[20:41:11.020] [bmv2] [T] [thread 17124] [9.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(234) Condition "standard_metadata.instance_type == 2" (node_13) is false
+[20:41:11.020] [bmv2] [T] [thread 17124] [9.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(239) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType != TYPE_FEEDBACK" (node_15) is true
+[20:41:11.020] [bmv2] [T] [thread 17124] [9.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(241) Condition "hdr.tcp.isValid()" (node_16) is false
+[20:41:11.020] [bmv2] [D] [thread 17124] [9.0] [cxt 0] Pipeline 'egress': end
+[20:41:11.020] [bmv2] [D] [thread 17124] [9.0] [cxt 0] Deparser 'deparser': start
+[20:41:11.020] [bmv2] [T] [thread 17124] [9.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[20:41:11.021] [bmv2] [D] [thread 17124] [9.0] [cxt 0] Deparsing header 'ethernet'
+[20:41:11.021] [bmv2] [D] [thread 17124] [9.0] [cxt 0] Deparser 'deparser': end
+[20:41:11.021] [bmv2] [D] [thread 17128] [9.0] [cxt 0] Transmitting packet of size 203 out of port 0
+[20:41:11.115] [bmv2] [D] [thread 17123] [10.0] [cxt 0] Processing packet received on port 4
+[20:41:11.115] [bmv2] [D] [thread 17123] [10.0] [cxt 0] Parser 'parser': start
+[20:41:11.115] [bmv2] [D] [thread 17123] [10.0] [cxt 0] Parser 'parser' entering state 'start'
+[20:41:11.115] [bmv2] [D] [thread 17123] [10.0] [cxt 0] Extracting header 'ethernet'
+[20:41:11.115] [bmv2] [D] [thread 17123] [10.0] [cxt 0] Parser state 'start': key is 86dd
+[20:41:11.115] [bmv2] [T] [thread 17123] [10.0] [cxt 0] Bytes parsed: 14
+[20:41:11.115] [bmv2] [D] [thread 17123] [10.0] [cxt 0] Parser 'parser': end
+[20:41:11.115] [bmv2] [D] [thread 17123] [10.0] [cxt 0] Pipeline 'ingress': start
+[20:41:11.115] [bmv2] [T] [thread 17123] [10.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(165) Condition "standard_metadata.instance_type == 4" (node_2) is false
+[20:41:11.115] [bmv2] [T] [thread 17123] [10.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(175) Condition "hdr.ipv4.isValid() && hdr.ipv4.ttl > 1" (node_4) is false
+[20:41:11.115] [bmv2] [T] [thread 17123] [10.0] [cxt 0] Applying table 'MyIngress.egress_type'
+[20:41:11.115] [bmv2] [D] [thread 17123] [10.0] [cxt 0] Looking up key:
+* standard_metadata.egress_spec: 0000
+
+[20:41:11.116] [bmv2] [D] [thread 17123] [10.0] [cxt 0] Table 'MyIngress.egress_type': miss
+[20:41:11.116] [bmv2] [D] [thread 17123] [10.0] [cxt 0] Action entry is NoAction - 
+[20:41:11.116] [bmv2] [T] [thread 17123] [10.0] [cxt 0] Action NoAction
+[20:41:11.116] [bmv2] [T] [thread 17123] [10.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(191) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType == TYPE_FEEDBACK && meta.egress_type == TYPE_EGRESS_HOST" (node_8) is false
+[20:41:11.116] [bmv2] [D] [thread 17123] [10.0] [cxt 0] Pipeline 'ingress': end
+[20:41:11.116] [bmv2] [D] [thread 17123] [10.0] [cxt 0] Egress port is 0
+[20:41:11.116] [bmv2] [D] [thread 17124] [10.0] [cxt 0] Pipeline 'egress': start
+[20:41:11.116] [bmv2] [T] [thread 17124] [10.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(234) Condition "standard_metadata.instance_type == 2" (node_13) is false
+[20:41:11.116] [bmv2] [T] [thread 17124] [10.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(239) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType != TYPE_FEEDBACK" (node_15) is true
+[20:41:11.116] [bmv2] [T] [thread 17124] [10.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(241) Condition "hdr.tcp.isValid()" (node_16) is false
+[20:41:11.116] [bmv2] [D] [thread 17124] [10.0] [cxt 0] Pipeline 'egress': end
+[20:41:11.116] [bmv2] [D] [thread 17124] [10.0] [cxt 0] Deparser 'deparser': start
+[20:41:11.116] [bmv2] [T] [thread 17124] [10.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[20:41:11.116] [bmv2] [D] [thread 17124] [10.0] [cxt 0] Deparsing header 'ethernet'
+[20:41:11.116] [bmv2] [D] [thread 17124] [10.0] [cxt 0] Deparser 'deparser': end
+[20:41:11.116] [bmv2] [D] [thread 17128] [10.0] [cxt 0] Transmitting packet of size 213 out of port 0
+[20:41:11.142] [bmv2] [D] [thread 17123] [11.0] [cxt 0] Processing packet received on port 3
+[20:41:11.143] [bmv2] [D] [thread 17123] [11.0] [cxt 0] Parser 'parser': start
+[20:41:11.143] [bmv2] [D] [thread 17123] [11.0] [cxt 0] Parser 'parser' entering state 'start'
+[20:41:11.143] [bmv2] [D] [thread 17123] [11.0] [cxt 0] Extracting header 'ethernet'
+[20:41:11.143] [bmv2] [D] [thread 17123] [11.0] [cxt 0] Parser state 'start': key is 86dd
+[20:41:11.143] [bmv2] [T] [thread 17123] [11.0] [cxt 0] Bytes parsed: 14
+[20:41:11.143] [bmv2] [D] [thread 17123] [11.0] [cxt 0] Parser 'parser': end
+[20:41:11.143] [bmv2] [D] [thread 17123] [11.0] [cxt 0] Pipeline 'ingress': start
+[20:41:11.143] [bmv2] [T] [thread 17123] [11.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(165) Condition "standard_metadata.instance_type == 4" (node_2) is false
+[20:41:11.143] [bmv2] [T] [thread 17123] [11.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(175) Condition "hdr.ipv4.isValid() && hdr.ipv4.ttl > 1" (node_4) is false
+[20:41:11.143] [bmv2] [T] [thread 17123] [11.0] [cxt 0] Applying table 'MyIngress.egress_type'
+[20:41:11.143] [bmv2] [D] [thread 17123] [11.0] [cxt 0] Looking up key:
+* standard_metadata.egress_spec: 0000
+
+[20:41:11.143] [bmv2] [D] [thread 17123] [11.0] [cxt 0] Table 'MyIngress.egress_type': miss
+[20:41:11.143] [bmv2] [D] [thread 17123] [11.0] [cxt 0] Action entry is NoAction - 
+[20:41:11.143] [bmv2] [T] [thread 17123] [11.0] [cxt 0] Action NoAction
+[20:41:11.143] [bmv2] [T] [thread 17123] [11.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(191) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType == TYPE_FEEDBACK && meta.egress_type == TYPE_EGRESS_HOST" (node_8) is false
+[20:41:11.143] [bmv2] [D] [thread 17123] [11.0] [cxt 0] Pipeline 'ingress': end
+[20:41:11.143] [bmv2] [D] [thread 17123] [11.0] [cxt 0] Egress port is 0
+[20:41:11.143] [bmv2] [D] [thread 17124] [11.0] [cxt 0] Pipeline 'egress': start
+[20:41:11.143] [bmv2] [T] [thread 17124] [11.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(234) Condition "standard_metadata.instance_type == 2" (node_13) is false
+[20:41:11.143] [bmv2] [T] [thread 17124] [11.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(239) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType != TYPE_FEEDBACK" (node_15) is true
+[20:41:11.143] [bmv2] [T] [thread 17124] [11.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(241) Condition "hdr.tcp.isValid()" (node_16) is false
+[20:41:11.143] [bmv2] [D] [thread 17124] [11.0] [cxt 0] Pipeline 'egress': end
+[20:41:11.143] [bmv2] [D] [thread 17124] [11.0] [cxt 0] Deparser 'deparser': start
+[20:41:11.143] [bmv2] [T] [thread 17124] [11.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[20:41:11.143] [bmv2] [D] [thread 17124] [11.0] [cxt 0] Deparsing header 'ethernet'
+[20:41:11.143] [bmv2] [D] [thread 17124] [11.0] [cxt 0] Deparser 'deparser': end
+[20:41:11.143] [bmv2] [D] [thread 17128] [11.0] [cxt 0] Transmitting packet of size 213 out of port 0
+[20:41:11.188] [bmv2] [D] [thread 17123] [12.0] [cxt 0] Processing packet received on port 1
+[20:41:11.188] [bmv2] [D] [thread 17123] [12.0] [cxt 0] Parser 'parser': start
+[20:41:11.188] [bmv2] [D] [thread 17123] [12.0] [cxt 0] Parser 'parser' entering state 'start'
+[20:41:11.188] [bmv2] [D] [thread 17123] [12.0] [cxt 0] Extracting header 'ethernet'
+[20:41:11.188] [bmv2] [D] [thread 17123] [12.0] [cxt 0] Parser state 'start': key is 86dd
+[20:41:11.188] [bmv2] [T] [thread 17123] [12.0] [cxt 0] Bytes parsed: 14
+[20:41:11.188] [bmv2] [D] [thread 17123] [12.0] [cxt 0] Parser 'parser': end
+[20:41:11.188] [bmv2] [D] [thread 17123] [12.0] [cxt 0] Pipeline 'ingress': start
+[20:41:11.188] [bmv2] [T] [thread 17123] [12.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(165) Condition "standard_metadata.instance_type == 4" (node_2) is false
+[20:41:11.188] [bmv2] [T] [thread 17123] [12.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(175) Condition "hdr.ipv4.isValid() && hdr.ipv4.ttl > 1" (node_4) is false
+[20:41:11.188] [bmv2] [T] [thread 17123] [12.0] [cxt 0] Applying table 'MyIngress.egress_type'
+[20:41:11.188] [bmv2] [D] [thread 17123] [12.0] [cxt 0] Looking up key:
+* standard_metadata.egress_spec: 0000
+
+[20:41:11.188] [bmv2] [D] [thread 17123] [12.0] [cxt 0] Table 'MyIngress.egress_type': miss
+[20:41:11.188] [bmv2] [D] [thread 17123] [12.0] [cxt 0] Action entry is NoAction - 
+[20:41:11.188] [bmv2] [T] [thread 17123] [12.0] [cxt 0] Action NoAction
+[20:41:11.188] [bmv2] [T] [thread 17123] [12.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(191) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType == TYPE_FEEDBACK && meta.egress_type == TYPE_EGRESS_HOST" (node_8) is false
+[20:41:11.188] [bmv2] [D] [thread 17123] [12.0] [cxt 0] Pipeline 'ingress': end
+[20:41:11.188] [bmv2] [D] [thread 17123] [12.0] [cxt 0] Egress port is 0
+[20:41:11.188] [bmv2] [D] [thread 17124] [12.0] [cxt 0] Pipeline 'egress': start
+[20:41:11.188] [bmv2] [T] [thread 17124] [12.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(234) Condition "standard_metadata.instance_type == 2" (node_13) is false
+[20:41:11.188] [bmv2] [T] [thread 17124] [12.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(239) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType != TYPE_FEEDBACK" (node_15) is true
+[20:41:11.188] [bmv2] [T] [thread 17124] [12.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(241) Condition "hdr.tcp.isValid()" (node_16) is false
+[20:41:11.188] [bmv2] [D] [thread 17124] [12.0] [cxt 0] Pipeline 'egress': end
+[20:41:11.188] [bmv2] [D] [thread 17124] [12.0] [cxt 0] Deparser 'deparser': start
+[20:41:11.188] [bmv2] [T] [thread 17124] [12.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[20:41:11.188] [bmv2] [D] [thread 17124] [12.0] [cxt 0] Deparsing header 'ethernet'
+[20:41:11.188] [bmv2] [D] [thread 17124] [12.0] [cxt 0] Deparser 'deparser': end
+[20:41:11.188] [bmv2] [D] [thread 17128] [12.0] [cxt 0] Transmitting packet of size 201 out of port 0
+[20:41:11.244] [bmv2] [D] [thread 17123] [13.0] [cxt 0] Processing packet received on port 4
+[20:41:11.244] [bmv2] [D] [thread 17123] [13.0] [cxt 0] Parser 'parser': start
+[20:41:11.244] [bmv2] [D] [thread 17123] [13.0] [cxt 0] Parser 'parser' entering state 'start'
+[20:41:11.244] [bmv2] [D] [thread 17123] [13.0] [cxt 0] Extracting header 'ethernet'
+[20:41:11.244] [bmv2] [D] [thread 17123] [13.0] [cxt 0] Parser state 'start': key is 86dd
+[20:41:11.244] [bmv2] [T] [thread 17123] [13.0] [cxt 0] Bytes parsed: 14
+[20:41:11.244] [bmv2] [D] [thread 17123] [13.0] [cxt 0] Parser 'parser': end
+[20:41:11.244] [bmv2] [D] [thread 17123] [13.0] [cxt 0] Pipeline 'ingress': start
+[20:41:11.244] [bmv2] [T] [thread 17123] [13.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(165) Condition "standard_metadata.instance_type == 4" (node_2) is false
+[20:41:11.244] [bmv2] [T] [thread 17123] [13.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(175) Condition "hdr.ipv4.isValid() && hdr.ipv4.ttl > 1" (node_4) is false
+[20:41:11.244] [bmv2] [T] [thread 17123] [13.0] [cxt 0] Applying table 'MyIngress.egress_type'
+[20:41:11.244] [bmv2] [D] [thread 17123] [13.0] [cxt 0] Looking up key:
+* standard_metadata.egress_spec: 0000
+
+[20:41:11.244] [bmv2] [D] [thread 17123] [13.0] [cxt 0] Table 'MyIngress.egress_type': miss
+[20:41:11.244] [bmv2] [D] [thread 17123] [13.0] [cxt 0] Action entry is NoAction - 
+[20:41:11.244] [bmv2] [T] [thread 17123] [13.0] [cxt 0] Action NoAction
+[20:41:11.244] [bmv2] [T] [thread 17123] [13.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(191) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType == TYPE_FEEDBACK && meta.egress_type == TYPE_EGRESS_HOST" (node_8) is false
+[20:41:11.244] [bmv2] [D] [thread 17123] [13.0] [cxt 0] Pipeline 'ingress': end
+[20:41:11.244] [bmv2] [D] [thread 17123] [13.0] [cxt 0] Egress port is 0
+[20:41:11.244] [bmv2] [D] [thread 17124] [13.0] [cxt 0] Pipeline 'egress': start
+[20:41:11.244] [bmv2] [T] [thread 17124] [13.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(234) Condition "standard_metadata.instance_type == 2" (node_13) is false
+[20:41:11.244] [bmv2] [T] [thread 17124] [13.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(239) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType != TYPE_FEEDBACK" (node_15) is true
+[20:41:11.244] [bmv2] [T] [thread 17124] [13.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(241) Condition "hdr.tcp.isValid()" (node_16) is false
+[20:41:11.244] [bmv2] [D] [thread 17124] [13.0] [cxt 0] Pipeline 'egress': end
+[20:41:11.244] [bmv2] [D] [thread 17124] [13.0] [cxt 0] Deparser 'deparser': start
+[20:41:11.244] [bmv2] [T] [thread 17124] [13.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[20:41:11.244] [bmv2] [D] [thread 17124] [13.0] [cxt 0] Deparsing header 'ethernet'
+[20:41:11.244] [bmv2] [D] [thread 17124] [13.0] [cxt 0] Deparser 'deparser': end
+[20:41:11.244] [bmv2] [D] [thread 17128] [13.0] [cxt 0] Transmitting packet of size 203 out of port 0
+[20:41:11.291] [bmv2] [D] [thread 17123] [14.0] [cxt 0] Processing packet received on port 4
+[20:41:11.291] [bmv2] [D] [thread 17123] [14.0] [cxt 0] Parser 'parser': start
+[20:41:11.291] [bmv2] [D] [thread 17123] [14.0] [cxt 0] Parser 'parser' entering state 'start'
+[20:41:11.291] [bmv2] [D] [thread 17123] [14.0] [cxt 0] Extracting header 'ethernet'
+[20:41:11.291] [bmv2] [D] [thread 17123] [14.0] [cxt 0] Parser state 'start': key is 86dd
+[20:41:11.291] [bmv2] [T] [thread 17123] [14.0] [cxt 0] Bytes parsed: 14
+[20:41:11.291] [bmv2] [D] [thread 17123] [14.0] [cxt 0] Parser 'parser': end
+[20:41:11.291] [bmv2] [D] [thread 17123] [14.0] [cxt 0] Pipeline 'ingress': start
+[20:41:11.291] [bmv2] [T] [thread 17123] [14.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(165) Condition "standard_metadata.instance_type == 4" (node_2) is false
+[20:41:11.291] [bmv2] [T] [thread 17123] [14.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(175) Condition "hdr.ipv4.isValid() && hdr.ipv4.ttl > 1" (node_4) is false
+[20:41:11.291] [bmv2] [T] [thread 17123] [14.0] [cxt 0] Applying table 'MyIngress.egress_type'
+[20:41:11.291] [bmv2] [D] [thread 17123] [14.0] [cxt 0] Looking up key:
+* standard_metadata.egress_spec: 0000
+
+[20:41:11.291] [bmv2] [D] [thread 17123] [14.0] [cxt 0] Table 'MyIngress.egress_type': miss
+[20:41:11.291] [bmv2] [D] [thread 17123] [14.0] [cxt 0] Action entry is NoAction - 
+[20:41:11.291] [bmv2] [T] [thread 17123] [14.0] [cxt 0] Action NoAction
+[20:41:11.291] [bmv2] [T] [thread 17123] [14.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(191) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType == TYPE_FEEDBACK && meta.egress_type == TYPE_EGRESS_HOST" (node_8) is false
+[20:41:11.291] [bmv2] [D] [thread 17123] [14.0] [cxt 0] Pipeline 'ingress': end
+[20:41:11.291] [bmv2] [D] [thread 17123] [14.0] [cxt 0] Egress port is 0
+[20:41:11.291] [bmv2] [D] [thread 17124] [14.0] [cxt 0] Pipeline 'egress': start
+[20:41:11.291] [bmv2] [T] [thread 17124] [14.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(234) Condition "standard_metadata.instance_type == 2" (node_13) is false
+[20:41:11.291] [bmv2] [T] [thread 17124] [14.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(239) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType != TYPE_FEEDBACK" (node_15) is true
+[20:41:11.291] [bmv2] [T] [thread 17124] [14.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(241) Condition "hdr.tcp.isValid()" (node_16) is false
+[20:41:11.291] [bmv2] [D] [thread 17124] [14.0] [cxt 0] Pipeline 'egress': end
+[20:41:11.291] [bmv2] [D] [thread 17124] [14.0] [cxt 0] Deparser 'deparser': start
+[20:41:11.291] [bmv2] [T] [thread 17124] [14.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[20:41:11.291] [bmv2] [D] [thread 17124] [14.0] [cxt 0] Deparsing header 'ethernet'
+[20:41:11.291] [bmv2] [D] [thread 17124] [14.0] [cxt 0] Deparser 'deparser': end
+[20:41:11.291] [bmv2] [D] [thread 17128] [14.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[20:41:11.316] [bmv2] [D] [thread 17123] [15.0] [cxt 0] Processing packet received on port 4
+[20:41:11.316] [bmv2] [D] [thread 17123] [15.0] [cxt 0] Parser 'parser': start
+[20:41:11.316] [bmv2] [D] [thread 17123] [15.0] [cxt 0] Parser 'parser' entering state 'start'
+[20:41:11.316] [bmv2] [D] [thread 17123] [15.0] [cxt 0] Extracting header 'ethernet'
+[20:41:11.316] [bmv2] [D] [thread 17123] [15.0] [cxt 0] Parser state 'start': key is 86dd
+[20:41:11.316] [bmv2] [T] [thread 17123] [15.0] [cxt 0] Bytes parsed: 14
+[20:41:11.316] [bmv2] [D] [thread 17123] [15.0] [cxt 0] Parser 'parser': end
+[20:41:11.316] [bmv2] [D] [thread 17123] [15.0] [cxt 0] Pipeline 'ingress': start
+[20:41:11.316] [bmv2] [T] [thread 17123] [15.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(165) Condition "standard_metadata.instance_type == 4" (node_2) is false
+[20:41:11.316] [bmv2] [T] [thread 17123] [15.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(175) Condition "hdr.ipv4.isValid() && hdr.ipv4.ttl > 1" (node_4) is false
+[20:41:11.316] [bmv2] [T] [thread 17123] [15.0] [cxt 0] Applying table 'MyIngress.egress_type'
+[20:41:11.316] [bmv2] [D] [thread 17123] [15.0] [cxt 0] Looking up key:
+* standard_metadata.egress_spec: 0000
+
+[20:41:11.316] [bmv2] [D] [thread 17123] [15.0] [cxt 0] Table 'MyIngress.egress_type': miss
+[20:41:11.316] [bmv2] [D] [thread 17123] [15.0] [cxt 0] Action entry is NoAction - 
+[20:41:11.316] [bmv2] [T] [thread 17123] [15.0] [cxt 0] Action NoAction
+[20:41:11.316] [bmv2] [T] [thread 17123] [15.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(191) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType == TYPE_FEEDBACK && meta.egress_type == TYPE_EGRESS_HOST" (node_8) is false
+[20:41:11.316] [bmv2] [D] [thread 17123] [15.0] [cxt 0] Pipeline 'ingress': end
+[20:41:11.316] [bmv2] [D] [thread 17123] [15.0] [cxt 0] Egress port is 0
+[20:41:11.316] [bmv2] [D] [thread 17124] [15.0] [cxt 0] Pipeline 'egress': start
+[20:41:11.316] [bmv2] [T] [thread 17124] [15.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(234) Condition "standard_metadata.instance_type == 2" (node_13) is false
+[20:41:11.316] [bmv2] [T] [thread 17124] [15.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(239) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType != TYPE_FEEDBACK" (node_15) is true
+[20:41:11.316] [bmv2] [T] [thread 17124] [15.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(241) Condition "hdr.tcp.isValid()" (node_16) is false
+[20:41:11.316] [bmv2] [D] [thread 17124] [15.0] [cxt 0] Pipeline 'egress': end
+[20:41:11.316] [bmv2] [D] [thread 17124] [15.0] [cxt 0] Deparser 'deparser': start
+[20:41:11.316] [bmv2] [T] [thread 17124] [15.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[20:41:11.316] [bmv2] [D] [thread 17124] [15.0] [cxt 0] Deparsing header 'ethernet'
+[20:41:11.316] [bmv2] [D] [thread 17124] [15.0] [cxt 0] Deparser 'deparser': end
+[20:41:11.316] [bmv2] [D] [thread 17128] [15.0] [cxt 0] Transmitting packet of size 201 out of port 0
+[20:41:11.342] [bmv2] [D] [thread 17123] [16.0] [cxt 0] Processing packet received on port 3
+[20:41:11.342] [bmv2] [D] [thread 17123] [16.0] [cxt 0] Parser 'parser': start
+[20:41:11.342] [bmv2] [D] [thread 17123] [16.0] [cxt 0] Parser 'parser' entering state 'start'
+[20:41:11.342] [bmv2] [D] [thread 17123] [16.0] [cxt 0] Extracting header 'ethernet'
+[20:41:11.342] [bmv2] [D] [thread 17123] [16.0] [cxt 0] Parser state 'start': key is 86dd
+[20:41:11.342] [bmv2] [T] [thread 17123] [16.0] [cxt 0] Bytes parsed: 14
+[20:41:11.342] [bmv2] [D] [thread 17123] [16.0] [cxt 0] Parser 'parser': end
+[20:41:11.342] [bmv2] [D] [thread 17123] [16.0] [cxt 0] Pipeline 'ingress': start
+[20:41:11.342] [bmv2] [T] [thread 17123] [16.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(165) Condition "standard_metadata.instance_type == 4" (node_2) is false
+[20:41:11.342] [bmv2] [T] [thread 17123] [16.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(175) Condition "hdr.ipv4.isValid() && hdr.ipv4.ttl > 1" (node_4) is false
+[20:41:11.342] [bmv2] [T] [thread 17123] [16.0] [cxt 0] Applying table 'MyIngress.egress_type'
+[20:41:11.342] [bmv2] [D] [thread 17123] [16.0] [cxt 0] Looking up key:
+* standard_metadata.egress_spec: 0000
+
+[20:41:11.342] [bmv2] [D] [thread 17123] [16.0] [cxt 0] Table 'MyIngress.egress_type': miss
+[20:41:11.342] [bmv2] [D] [thread 17123] [16.0] [cxt 0] Action entry is NoAction - 
+[20:41:11.342] [bmv2] [T] [thread 17123] [16.0] [cxt 0] Action NoAction
+[20:41:11.342] [bmv2] [T] [thread 17123] [16.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(191) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType == TYPE_FEEDBACK && meta.egress_type == TYPE_EGRESS_HOST" (node_8) is false
+[20:41:11.342] [bmv2] [D] [thread 17123] [16.0] [cxt 0] Pipeline 'ingress': end
+[20:41:11.342] [bmv2] [D] [thread 17123] [16.0] [cxt 0] Egress port is 0
+[20:41:11.342] [bmv2] [D] [thread 17124] [16.0] [cxt 0] Pipeline 'egress': start
+[20:41:11.342] [bmv2] [T] [thread 17124] [16.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(234) Condition "standard_metadata.instance_type == 2" (node_13) is false
+[20:41:11.342] [bmv2] [T] [thread 17124] [16.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(239) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType != TYPE_FEEDBACK" (node_15) is true
+[20:41:11.342] [bmv2] [T] [thread 17124] [16.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(241) Condition "hdr.tcp.isValid()" (node_16) is false
+[20:41:11.342] [bmv2] [D] [thread 17124] [16.0] [cxt 0] Pipeline 'egress': end
+[20:41:11.342] [bmv2] [D] [thread 17124] [16.0] [cxt 0] Deparser 'deparser': start
+[20:41:11.342] [bmv2] [T] [thread 17124] [16.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[20:41:11.342] [bmv2] [D] [thread 17124] [16.0] [cxt 0] Deparsing header 'ethernet'
+[20:41:11.342] [bmv2] [D] [thread 17124] [16.0] [cxt 0] Deparser 'deparser': end
+[20:41:11.342] [bmv2] [D] [thread 17128] [16.0] [cxt 0] Transmitting packet of size 201 out of port 0
+[20:41:11.354] [bmv2] [D] [thread 17123] [17.0] [cxt 0] Processing packet received on port 1
+[20:41:11.354] [bmv2] [D] [thread 17123] [17.0] [cxt 0] Parser 'parser': start
+[20:41:11.354] [bmv2] [D] [thread 17123] [17.0] [cxt 0] Parser 'parser' entering state 'start'
+[20:41:11.354] [bmv2] [D] [thread 17123] [17.0] [cxt 0] Extracting header 'ethernet'
+[20:41:11.354] [bmv2] [D] [thread 17123] [17.0] [cxt 0] Parser state 'start': key is 86dd
+[20:41:11.354] [bmv2] [T] [thread 17123] [17.0] [cxt 0] Bytes parsed: 14
+[20:41:11.354] [bmv2] [D] [thread 17123] [17.0] [cxt 0] Parser 'parser': end
+[20:41:11.354] [bmv2] [D] [thread 17123] [17.0] [cxt 0] Pipeline 'ingress': start
+[20:41:11.354] [bmv2] [T] [thread 17123] [17.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(165) Condition "standard_metadata.instance_type == 4" (node_2) is false
+[20:41:11.354] [bmv2] [T] [thread 17123] [17.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(175) Condition "hdr.ipv4.isValid() && hdr.ipv4.ttl > 1" (node_4) is false
+[20:41:11.354] [bmv2] [T] [thread 17123] [17.0] [cxt 0] Applying table 'MyIngress.egress_type'
+[20:41:11.354] [bmv2] [D] [thread 17123] [17.0] [cxt 0] Looking up key:
+* standard_metadata.egress_spec: 0000
+
+[20:41:11.354] [bmv2] [D] [thread 17123] [17.0] [cxt 0] Table 'MyIngress.egress_type': miss
+[20:41:11.354] [bmv2] [D] [thread 17123] [17.0] [cxt 0] Action entry is NoAction - 
+[20:41:11.354] [bmv2] [T] [thread 17123] [17.0] [cxt 0] Action NoAction
+[20:41:11.354] [bmv2] [T] [thread 17123] [17.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(191) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType == TYPE_FEEDBACK && meta.egress_type == TYPE_EGRESS_HOST" (node_8) is false
+[20:41:11.354] [bmv2] [D] [thread 17123] [17.0] [cxt 0] Pipeline 'ingress': end
+[20:41:11.354] [bmv2] [D] [thread 17123] [17.0] [cxt 0] Egress port is 0
+[20:41:11.355] [bmv2] [D] [thread 17124] [17.0] [cxt 0] Pipeline 'egress': start
+[20:41:11.355] [bmv2] [T] [thread 17124] [17.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(234) Condition "standard_metadata.instance_type == 2" (node_13) is false
+[20:41:11.355] [bmv2] [T] [thread 17124] [17.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(239) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType != TYPE_FEEDBACK" (node_15) is true
+[20:41:11.355] [bmv2] [T] [thread 17124] [17.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(241) Condition "hdr.tcp.isValid()" (node_16) is false
+[20:41:11.355] [bmv2] [D] [thread 17124] [17.0] [cxt 0] Pipeline 'egress': end
+[20:41:11.355] [bmv2] [D] [thread 17124] [17.0] [cxt 0] Deparser 'deparser': start
+[20:41:11.355] [bmv2] [T] [thread 17124] [17.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[20:41:11.355] [bmv2] [D] [thread 17124] [17.0] [cxt 0] Deparsing header 'ethernet'
+[20:41:11.355] [bmv2] [D] [thread 17124] [17.0] [cxt 0] Deparser 'deparser': end
+[20:41:11.355] [bmv2] [D] [thread 17128] [17.0] [cxt 0] Transmitting packet of size 90 out of port 0
+[20:41:11.387] [bmv2] [D] [thread 17123] [18.0] [cxt 0] Processing packet received on port 2
+[20:41:11.387] [bmv2] [D] [thread 17123] [18.0] [cxt 0] Parser 'parser': start
+[20:41:11.387] [bmv2] [D] [thread 17123] [18.0] [cxt 0] Parser 'parser' entering state 'start'
+[20:41:11.387] [bmv2] [D] [thread 17123] [18.0] [cxt 0] Extracting header 'ethernet'
+[20:41:11.387] [bmv2] [D] [thread 17123] [18.0] [cxt 0] Parser state 'start': key is 86dd
+[20:41:11.387] [bmv2] [T] [thread 17123] [18.0] [cxt 0] Bytes parsed: 14
+[20:41:11.387] [bmv2] [D] [thread 17123] [18.0] [cxt 0] Parser 'parser': end
+[20:41:11.387] [bmv2] [D] [thread 17123] [18.0] [cxt 0] Pipeline 'ingress': start
+[20:41:11.387] [bmv2] [T] [thread 17123] [18.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(165) Condition "standard_metadata.instance_type == 4" (node_2) is false
+[20:41:11.387] [bmv2] [T] [thread 17123] [18.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(175) Condition "hdr.ipv4.isValid() && hdr.ipv4.ttl > 1" (node_4) is false
+[20:41:11.387] [bmv2] [T] [thread 17123] [18.0] [cxt 0] Applying table 'MyIngress.egress_type'
+[20:41:11.387] [bmv2] [D] [thread 17123] [18.0] [cxt 0] Looking up key:
+* standard_metadata.egress_spec: 0000
+
+[20:41:11.387] [bmv2] [D] [thread 17123] [18.0] [cxt 0] Table 'MyIngress.egress_type': miss
+[20:41:11.387] [bmv2] [D] [thread 17123] [18.0] [cxt 0] Action entry is NoAction - 
+[20:41:11.387] [bmv2] [T] [thread 17123] [18.0] [cxt 0] Action NoAction
+[20:41:11.387] [bmv2] [T] [thread 17123] [18.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(191) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType == TYPE_FEEDBACK && meta.egress_type == TYPE_EGRESS_HOST" (node_8) is false
+[20:41:11.387] [bmv2] [D] [thread 17123] [18.0] [cxt 0] Pipeline 'ingress': end
+[20:41:11.387] [bmv2] [D] [thread 17123] [18.0] [cxt 0] Egress port is 0
+[20:41:11.387] [bmv2] [D] [thread 17124] [18.0] [cxt 0] Pipeline 'egress': start
+[20:41:11.387] [bmv2] [T] [thread 17124] [18.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(234) Condition "standard_metadata.instance_type == 2" (node_13) is false
+[20:41:11.387] [bmv2] [T] [thread 17124] [18.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(239) Condition "standard_metadata.instance_type == 0 && hdr.ethernet.etherType != TYPE_FEEDBACK" (node_15) is true
+[20:41:11.387] [bmv2] [T] [thread 17124] [18.0] [cxt 0] /home/wly/p4-learning/exercises/10-Congestion_Aware_Load_Balancing/p4src/loadbalancer.p4(241) Condition "hdr.tcp.isValid()" (node_16) is false
+[20:41:11.387] [bmv2] [D] [thread 17124] [18.0] [cxt 0] Pipeline 'egress': end
+[20:41:11.387] [bmv2] [D] [thread 17124] [18.0] [cxt 0] Deparser 'deparser': start
+[20:41:11.387] [bmv2] [T] [thread 17124] [18.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[20:41:11.387] [bmv2] [D] [thread 17124] [18.0] [cxt 0] Deparsing header 'ethernet'
+[20:41:11.387] [bmv2] [D] [thread 17124] [18.0] [cxt 0] Deparser 'deparser': end
+[20:41:11.387] [bmv2] [D] [thread 17128] [18.0] [cxt 0] Transmitting packet of size 201 out of port 0
+[20:41:11.822] [bmv2] [T] [thread 17597] bm_get_config
+[20:41:11.823] [bmv2] [T] [thread 17597] bm_mt_get_entries
+[20:41:11.823] [bmv2] [T] [thread 17597] bm_mt_get_entries
+[20:41:11.823] [bmv2] [T] [thread 17597] bm_mt_get_entries
+[20:41:11.855] [bmv2] [T] [thread 17597] bm_reset_state
+[20:41:11.856] [bmv2] [D] [thread 17597] Resetting simple_switch target-specific state
+[20:41:11.856] [bmv2] [D] [thread 17597] resetting PRE state
+[20:41:11.864] [bmv2] [T] [thread 17597] bm_set_default_action
+[20:41:11.864] [bmv2] [D] [thread 17597] Set default entry for table 'MyIngress.ipv4_lpm': MyIngress.drop - 
+[20:41:11.864] [bmv2] [T] [thread 17597] bm_set_default_action
+[20:41:11.864] [bmv2] [D] [thread 17597] Set default entry for table 'MyIngress.ecmp_group_to_nhop': MyIngress.drop - 
+[20:41:11.878] [bmv2] [T] [thread 17597] bm_table_add_entry
+[20:41:11.878] [bmv2] [D] [thread 17597] Entry 0 added to table 'MyIngress.egress_type'
+[20:41:11.878] [bmv2] [D] [thread 17597] Dumping entry 0
+Match key:
+* standard_metadata.egress_spec: EXACT     0001
+Action entry: MyIngress.set_egress_type - 2,
+
+[20:41:11.879] [bmv2] [T] [thread 17597] bm_table_add_entry
+[20:41:11.879] [bmv2] [D] [thread 17597] Entry 1 added to table 'MyIngress.egress_type'
+[20:41:11.879] [bmv2] [D] [thread 17597] Dumping entry 1
+Match key:
+* standard_metadata.egress_spec: EXACT     0002
+Action entry: MyIngress.set_egress_type - 2,
+
+[20:41:11.879] [bmv2] [T] [thread 17597] bm_table_add_entry
+[20:41:11.879] [bmv2] [D] [thread 17597] Entry 2 added to table 'MyIngress.egress_type'
+[20:41:11.879] [bmv2] [D] [thread 17597] Dumping entry 2
+Match key:
+* standard_metadata.egress_spec: EXACT     0003
+Action entry: MyIngress.set_egress_type - 2,
+
+[20:41:11.879] [bmv2] [T] [thread 17597] bm_table_add_entry
+[20:41:11.879] [bmv2] [D] [thread 17597] Entry 3 added to table 'MyIngress.egress_type'
+[20:41:11.879] [bmv2] [D] [thread 17597] Dumping entry 3
+Match key:
+* standard_metadata.egress_spec: EXACT     0004
+Action entry: MyIngress.set_egress_type - 2,
+
+[20:41:11.884] [bmv2] [T] [thread 17617] mirroring_sesssion_add
+[20:41:11.973] [bmv2] [T] [thread 17597] bm_table_add_entry
+[20:41:11.973] [bmv2] [D] [thread 17597] Entry 0 added to table 'MyIngress.ipv4_lpm'
+[20:41:11.973] [bmv2] [D] [thread 17597] Dumping entry 0
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a010102/24
+Action entry: MyIngress.set_nhop - 7e87f1884c89,1,
+
+[20:41:11.973] [bmv2] [T] [thread 17597] bm_table_add_entry
+[20:41:11.973] [bmv2] [D] [thread 17597] Entry 1 added to table 'MyIngress.ipv4_lpm'
+[20:41:11.973] [bmv2] [D] [thread 17597] Dumping entry 1
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a010202/24
+Action entry: MyIngress.set_nhop - 7e87f1884c89,1,
+
+[20:41:11.974] [bmv2] [T] [thread 17597] bm_table_add_entry
+[20:41:11.974] [bmv2] [D] [thread 17597] Entry 2 added to table 'MyIngress.ipv4_lpm'
+[20:41:11.974] [bmv2] [D] [thread 17597] Dumping entry 2
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a020302/24
+Action entry: MyIngress.set_nhop - 7e87f1884c89,1,
+
+[20:41:11.974] [bmv2] [T] [thread 17597] bm_table_add_entry
+[20:41:11.974] [bmv2] [D] [thread 17597] Entry 3 added to table 'MyIngress.ipv4_lpm'
+[20:41:11.974] [bmv2] [D] [thread 17597] Dumping entry 3
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a020402/24
+Action entry: MyIngress.set_nhop - 7e87f1884c89,1,
+
+[20:41:11.974] [bmv2] [T] [thread 17597] bm_table_add_entry
+[20:41:11.974] [bmv2] [D] [thread 17597] Entry 4 added to table 'MyIngress.ipv4_lpm'
+[20:41:11.974] [bmv2] [D] [thread 17597] Dumping entry 4
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a030502/24
+Action entry: MyIngress.set_nhop - 460fdd62d9c6,2,
+
+[20:41:11.975] [bmv2] [T] [thread 17597] bm_table_add_entry
+[20:41:11.975] [bmv2] [D] [thread 17597] Entry 5 added to table 'MyIngress.ipv4_lpm'
+[20:41:11.975] [bmv2] [D] [thread 17597] Dumping entry 5
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a030602/24
+Action entry: MyIngress.set_nhop - 460fdd62d9c6,2,
+
+[20:41:11.975] [bmv2] [T] [thread 17597] bm_table_add_entry
+[20:41:11.975] [bmv2] [D] [thread 17597] Entry 6 added to table 'MyIngress.ipv4_lpm'
+[20:41:11.975] [bmv2] [D] [thread 17597] Dumping entry 6
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a040702/24
+Action entry: MyIngress.set_nhop - 460fdd62d9c6,2,
+
+[20:41:11.975] [bmv2] [T] [thread 17597] bm_table_add_entry
+[20:41:11.975] [bmv2] [D] [thread 17597] Entry 7 added to table 'MyIngress.ipv4_lpm'
+[20:41:11.975] [bmv2] [D] [thread 17597] Dumping entry 7
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a040802/24
+Action entry: MyIngress.set_nhop - 460fdd62d9c6,2,
+
+[20:41:11.976] [bmv2] [T] [thread 17597] bm_table_add_entry
+[20:41:11.976] [bmv2] [D] [thread 17597] Entry 8 added to table 'MyIngress.ipv4_lpm'
+[20:41:11.976] [bmv2] [D] [thread 17597] Dumping entry 8
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a050902/24
+Action entry: MyIngress.set_nhop - 9ee1e6872a0d,3,
+
+[20:41:11.976] [bmv2] [T] [thread 17597] bm_table_add_entry
+[20:41:11.976] [bmv2] [D] [thread 17597] Entry 9 added to table 'MyIngress.ipv4_lpm'
+[20:41:11.976] [bmv2] [D] [thread 17597] Dumping entry 9
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a050a02/24
+Action entry: MyIngress.set_nhop - 9ee1e6872a0d,3,
+
+[20:41:11.976] [bmv2] [T] [thread 17597] bm_table_add_entry
+[20:41:11.977] [bmv2] [D] [thread 17597] Entry 10 added to table 'MyIngress.ipv4_lpm'
+[20:41:11.977] [bmv2] [D] [thread 17597] Dumping entry 10
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a060b02/24
+Action entry: MyIngress.set_nhop - 9ee1e6872a0d,3,
+
+[20:41:11.977] [bmv2] [T] [thread 17597] bm_table_add_entry
+[20:41:11.977] [bmv2] [D] [thread 17597] Entry 11 added to table 'MyIngress.ipv4_lpm'
+[20:41:11.977] [bmv2] [D] [thread 17597] Dumping entry 11
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a060c02/24
+Action entry: MyIngress.set_nhop - 9ee1e6872a0d,3,
+
+[20:41:11.977] [bmv2] [T] [thread 17597] bm_table_add_entry
+[20:41:11.977] [bmv2] [D] [thread 17597] Entry 12 added to table 'MyIngress.ipv4_lpm'
+[20:41:11.977] [bmv2] [D] [thread 17597] Dumping entry 12
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a070d02/24
+Action entry: MyIngress.set_nhop - 6e9dea55c218,4,
+
+[20:41:11.978] [bmv2] [T] [thread 17597] bm_table_add_entry
+[20:41:11.978] [bmv2] [D] [thread 17597] Entry 13 added to table 'MyIngress.ipv4_lpm'
+[20:41:11.978] [bmv2] [D] [thread 17597] Dumping entry 13
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a070e02/24
+Action entry: MyIngress.set_nhop - 6e9dea55c218,4,
+
+[20:41:11.978] [bmv2] [T] [thread 17597] bm_table_add_entry
+[20:41:11.978] [bmv2] [D] [thread 17597] Entry 14 added to table 'MyIngress.ipv4_lpm'
+[20:41:11.978] [bmv2] [D] [thread 17597] Dumping entry 14
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a080f02/24
+Action entry: MyIngress.set_nhop - 6e9dea55c218,4,
+
+[20:41:11.978] [bmv2] [T] [thread 17597] bm_table_add_entry
+[20:41:11.978] [bmv2] [D] [thread 17597] Entry 15 added to table 'MyIngress.ipv4_lpm'
+[20:41:11.978] [bmv2] [D] [thread 17597] Dumping entry 15
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a081002/24
+Action entry: MyIngress.set_nhop - 6e9dea55c218,4,
+
